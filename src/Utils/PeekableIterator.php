@@ -2,7 +2,7 @@
 
 namespace Xopoc14\PhpLatex\Utils;
 
-interface PeekableIterator extends Iterator
+interface PeekableIterator extends \Iterator
 {
     /**
      * Returns the next element in the iteration, without advancing

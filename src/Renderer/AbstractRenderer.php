@@ -3,6 +3,8 @@
 namespace Xopoc14\PhpLatex\Renderer;
 
 use Xopoc14\PhpLatex\Node;
+use Xopoc14\PhpLatex\Parser;
+use Xopoc14\PhpLatex\Utils;
 
 abstract class AbstractRenderer
 {

@@ -3,7 +3,7 @@
 namespace Xopoc14\PhpLatex\Utils;
 
 class PeekableArrayIterator
-    implements Iterator, Countable, ArrayAccess, PeekableIterator
+    implements \Iterator, \Countable, \ArrayAccess, PeekableIterator
 {
     /**
      * @var array

@@ -5,6 +5,7 @@ namespace Xopoc14\PhpLatex\Renderer;
 use Xopoc14\PhpLatex\Utils\PeekableArrayIterator;
 use Xopoc14\PhpLatex\Utils\PeekableIterator;
 use Xopoc14\PhpLatex\Node;
+use Xopoc14\PhpLatex\Parser;
 
 class Html extends AbstractRenderer
 {
