@@ -1,7 +1,9 @@
 <?php
 
+namespace Xopoc14\PhpLatex;
+
 // TODO add options, such as changing PDF version in xelatex -output-driver="xdvipdfmx -V4"
-class PhpLatex_PdfLatex
+class PdfLatex
 {
     const TEXMFHOME = 'TEXMFHOME';
 
@@ -50,7 +52,7 @@ class PhpLatex_PdfLatex
 
     public function findPdflatexBinary()
     {
-        $files = array('pdflatex');
+        $files = ['pdflatex'];
 
         $path = getenv('PATH');
         $dirs = explode(PATH_SEPARATOR, $path);
@@ -102,7 +104,7 @@ class PhpLatex_PdfLatex
         $cwd = getcwd();
         $dir = dirname($file);
 
-        foreach ((array) $files as $path) {
+        foreach ((array)$files as $path) {
             // TODO handle Windows
             if (!is_file($dir . '/' . basename($path))) {
                 if (!@symlink($path, $dir . '/' . basename($path))) {
@@ -125,12 +127,12 @@ class PhpLatex_PdfLatex
         $this->_setEnv(self::TEXMFHOME, $texmfhome);
 
         // process log so that paths are not given away
-        $log = str_replace(array("\r\n", "\r"), "\n", $log);
-        $log = str_replace(array(
+        $log = str_replace(["\r\n", "\r"], "\n", $log);
+        $log = str_replace([
             $dir . '/',
             wordwrap('(' . $dir . '/', 79, "\n", true),
             wordwrap($dir . '/', 79, "\n", true),
-        ), array('', '('), $log);
+        ], ['', '('], $log);
 
         $this->_log = __CLASS__ . ' ' . $file . "\n\n" . $log;
 
@@ -185,12 +187,12 @@ class PhpLatex_PdfLatex
 
     public function getLog()
     {
-        return (string) $this->_log;
+        return (string)$this->_log;
     }
 
     public function setTexmfhome($texmfhome)
     {
-        $this->_texmfhome = (string) $texmfhome;
+        $this->_texmfhome = (string)$texmfhome;
         return $this;
     }
 

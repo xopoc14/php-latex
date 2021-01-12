@@ -1,6 +1,6 @@
 <?php
 
-return array (
+return [
     'Á' => '\\\'{A}', // A with acute
     'Á̧' => 'A', // A with acute and cedilla
     'Ạ́' => 'A', // A with acute and dot below
@@ -1497,4 +1497,4 @@ return array (
     "\xE2\x80\x80" => ' ', // EN QUAD
     "\xE2\x80\x81" => ' ', // EM QUAD
     "\xEF\xBB\xBF" => '', // ZERO WIDTH NO-BREAK SPACE (BOM)
-);
+];

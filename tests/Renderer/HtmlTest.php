@@ -1,10 +1,15 @@
 <?php
 
-class PhpLatex_Test_Renderer_HtmlTest extends PHPUnit_Framework_TestCase
+namespace Xopoc14\PhpLatex\Test\Renderer;
+
+use PHPUnit\Framework\TestCase;
+use Xopoc14\PhpLatex\Renderer\Html;
+
+class HtmlTest extends TestCase
 {
     public function testRenderer()
     {
-        $renderer = new PhpLatex_Renderer_Html();
+        $renderer = new Html();
         $html = $renderer->render('
             \textit{\textbf{Italic \textup{bold} text}}
         ');
@@ -14,7 +19,7 @@ class PhpLatex_Test_Renderer_HtmlTest extends PHPUnit_Framework_TestCase
 
     public function testSpaces()
     {
-        $renderer = new PhpLatex_Renderer_Html();
+        $renderer = new Html();
         $html = $renderer->render('
             A B
 

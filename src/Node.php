@@ -1,13 +1,15 @@
 <?php
 
+namespace Xopoc14\PhpLatex;
+
 /**
  * Class representing AST node of a parsed document.
  */
-class PhpLatex_Node
+class Node
 {
     protected $_type;
     protected $_props;
-    protected $_children = array();
+    protected $_children = [];
 
     /**
      * @param mixed $type
@@ -34,20 +36,20 @@ class PhpLatex_Node
     }
 
     /**
-     * @return PhpLatex_Node
+     * @return Node
      */
-    public function addChild(PhpLatex_Node $node)
+    public function addChild(Node $node)
     {
         return $this->appendChild($node);
     }
 
-    public function appendChild(PhpLatex_Node $child)
+    public function appendChild(Node $child)
     {
         $this->_children[] = $child;
         return $this;
     }
 
-    public function appendTo(PhpLatex_Node $parent)
+    public function appendTo(Node $parent)
     {
         $parent->appendChild($this);
         return $this;
@@ -57,7 +59,7 @@ class PhpLatex_Node
      * Retrieves the child node corresponding to the specified index.
      *
      * @param  int $index   The zero-based index of the child
-     * @return PhpLatex_Node
+     * @return Node
      */
     public function getChild($index)
     {
@@ -81,7 +83,7 @@ class PhpLatex_Node
     }
 
     /**
-     * @return PhpLatex_Node
+     * @return Node
      */
     public function setProps(array $props)
     {
@@ -94,7 +96,7 @@ class PhpLatex_Node
     /**
      * @param  string $key
      * @param  mixed $value
-     * @return PhpLatex_Node
+     * @return Node
      */
     public function setProp($key, $value)
     {

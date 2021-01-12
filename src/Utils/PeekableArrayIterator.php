@@ -1,14 +1,16 @@
 <?php
 
-class PhpLatex_Utils_PeekableArrayIterator
-    implements Iterator, Countable, ArrayAccess, PhpLatex_Utils_PeekableIterator
+namespace Xopoc14\PhpLatex\Utils;
+
+class PeekableArrayIterator
+    implements Iterator, Countable, ArrayAccess, PeekableIterator
 {
     /**
      * @var array
      */
     protected $_array;
 
-    public function __construct(array $array = array())
+    public function __construct(array $array = [])
     {
         $this->_array = $array;
 

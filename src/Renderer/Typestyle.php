@@ -1,6 +1,8 @@
 <?php
 
-class PhpLatex_Renderer_Typestyle
+namespace Xopoc14\PhpLatex\Renderer;
+
+class Typestyle
 {
     const FAMILY_UNKNOWN = 0;
 
@@ -46,15 +48,15 @@ class PhpLatex_Renderer_Typestyle
 
     public function diff()
     {
-        $props = array(
-            'style'     => 'int',
-            'bold'      => 'bool',
+        $props = [
+            'style' => 'int',
+            'bold' => 'bool',
             'underline' => 'bool',
-            'emphasis'  => 'bool',
+            'emphasis' => 'bool',
             'smallcaps' => 'bool',
-            'family'    => 'int',
-        );
-        $diff = array();
+            'family' => 'int',
+        ];
+        $diff = [];
 
         if ($this->_parent === null) {
             foreach ($props as $name => $type) {

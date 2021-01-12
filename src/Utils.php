@@ -1,14 +1,16 @@
 <?php
 
-class PhpLatex_Utils
+namespace Xopoc14\PhpLatex;
+
+class Utils
 {
     /**
-     * @param  string $string
+     * @param string $string
      * @return string
      */
     public static function escape($string)
     {
-        $replace = array(
+        $replace = [
             '&' => '\\&',
             '{' => '\\{',
             '}' => '\\}',
@@ -22,8 +24,8 @@ class PhpLatex_Utils
             // escape square brackets so that \\[length] construct does not appear
             '[' => '{[}',
             ']' => '{]}',
-        );
-        $string = (string) $string;
+        ];
+        $string = (string)$string;
         return strtr($string, $replace);
     }
 
@@ -40,7 +42,7 @@ class PhpLatex_Utils
         if (null === $map) {
             $map = require dirname(__FILE__) . '/latex_utf8.php';
         }
-        $string = (string) $string;
+        $string = (string)$string;
         $string = strtr($string, $map);
         $string = preg_replace('/[^\t\n\r\x20-\x7E]/', '', $string);
         return $string;

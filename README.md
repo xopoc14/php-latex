@@ -1,7 +1,7 @@
 # php-latex
 
-[![Build status](https://img.shields.io/circleci/build/gh/xemlock/php-latex?logo=circleci)](https://circleci.com/gh/xemlock/php-latex)
-[![License](https://img.shields.io/packagist/l/xemlock/php-latex.svg)](https://packagist.org/packages/xemlock/php-latex)
+[![Build status](https://img.shields.io/circleci/build/gh/xopoc14/php-latex?logo=circleci)](https://circleci.com/gh/xopoc14/php-latex)
+[![License](https://img.shields.io/packagist/l/xopoc14/php-latex.svg)](https://packagist.org/packages/xopoc14/php-latex)
 
 
 The main purpose of this library is to provide a valid LaTeX output from, not always valid, user input. You can also render LaTeX code to HTML, with one limitation though - rendering to HTML is done only for the text mode, the math mode needs to be handled by a JavaScript
@@ -12,7 +12,7 @@ library - in the browser. For this I recommend using [MathJax](https://www.mathj
 To use php-latex, you install it just as any other php package - with [Composer](https://getcomposer.org/).
 
 ```
-composer require xemlock/php-latex:dev-master
+composer require xopoc14/php-latex:dev-master
 ```
 
 ## Usage
@@ -22,7 +22,8 @@ Basic usage is as follows:
 Parsing LaTeX source code:
 
 ```php
-$parser = new PhpLatex_Parser();
+use Xopoc14\PhpLatex\Parser;
+$parser = new Parser();
 $parsedTree = $this->parse($input);
 // $parsedTree contains object representation of the LaTeX document
 ```
@@ -30,8 +31,9 @@ $parsedTree = $this->parse($input);
 Once you have a parsed source code, you can render it to HTML (or to LaTeX) - please mind that math-mode code is rendered as-is.
 
 ```php
+use Xopoc14\PhpLatex\Renderer\Html;
 // render parsed LaTeX code to HTML
-$htmlRenderer = new PhpLatex_Renderer_Html();
+$htmlRenderer = new Html();
 $html = $htmlRenderer->render($parsedTree);
 
 // render parsed LaTeX code to sanitized LaTeX code
@@ -41,10 +43,11 @@ $latex = PhpLatex_Renderer_Abstract::toLatex($parsedTree);
 You can also add custom (or not yet implemented) commands to the parser:
 
 ```php
+use Xopoc14\PhpLatex\Parser;
 $parser = new PhpLatex_Parser();
 $parser->addCommand(
     '\placeholder',
-    array(
+    [
         // number of arguments
         'numArgs' => 1,
         // number of optional arguments, default 0
@@ -55,7 +58,7 @@ $parser->addCommand(
         'parseArgs' => false,
         // whether command allows a starred variant
         'starred' => false,
-    )
+    ]
 );
 ```
 

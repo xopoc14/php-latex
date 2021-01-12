@@ -1,3035 +1,3035 @@
-<?php return array (
-    '\\ ' => array(
+<?php return [
+    '\\ ' => [
         'mode' => 'both',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\!' => array(
+    ],
+    '\\!' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\"' => array(
+    ],
+    '\\"' => [
         'mode' => 'text',
         'numArgs' => 1,
         'numOptArgs' => 0,
-    ),
-    '\\#' => array(
+    ],
+    '\\#' => [
         'mode' => 'both',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\$' => array(
+    ],
+    '\\$' => [
         'mode' => 'both',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\\'' => array(
+    ],
+    '\\\'' => [
         'mode' => 'text',
         'numArgs' => 1,
         'numOptArgs' => 0,
-    ),
-    '\\*' => array(
+    ],
+    '\\*' => [
         'mode' => 'both',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\,' => array(
+    ],
+    '\\,' => [
         'mode' => 'both',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\.' => array(
+    ],
+    '\\.' => [
         'mode' => 'text',
         'numArgs' => 1,
         'numOptArgs' => 0,
-    ),
-    '\\:' => array(
+    ],
+    '\\:' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\;' => array(
+    ],
+    '\\;' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\=' => array(
+    ],
+    '\\=' => [
         'mode' => 'text',
         'numArgs' => 1,
         'numOptArgs' => 0,
-    ),
-    '\\@' => array(
+    ],
+    '\\@' => [
         'mode' => 'text',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\\\' => array(
+    ],
+    '\\\\' => [
         'mode' => 'both',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\^' => array(
+    ],
+    '\\^' => [
         'mode' => 'text',
         'numArgs' => 1,
         'numOptArgs' => 0,
-    ),
-    '\\_' => array(
+    ],
+    '\\_' => [
         'mode' => 'both',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\`' => array(
+    ],
+    '\\`' => [
         'mode' => 'text',
         'numArgs' => 1,
         'numOptArgs' => 0,
-    ),
-    '\\acute' => array(
+    ],
+    '\\acute' => [
         'mode' => 'math',
         'numArgs' => 1,
         'numOptArgs' => 0,
-    ),
-    '\\aleph' => array(
+    ],
+    '\\aleph' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\alpha' => array(
+    ],
+    '\\alpha' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\amalg' => array(
+    ],
+    '\\amalg' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\angle' => array(
+    ],
+    '\\angle' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\approx' => array(
+    ],
+    '\\approx' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\approxeq' => array(
+    ],
+    '\\approxeq' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\arccos' => array(
+    ],
+    '\\arccos' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\arcsin' => array(
+    ],
+    '\\arcsin' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\arctan' => array(
+    ],
+    '\\arctan' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\arg' => array(
+    ],
+    '\\arg' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\Arrowvert' => array(
+    ],
+    '\\Arrowvert' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\arrowvert' => array(
+    ],
+    '\\arrowvert' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\ast' => array(
+    ],
+    '\\ast' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\asymp' => array(
+    ],
+    '\\asymp' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\b' => array(
+    ],
+    '\\b' => [
         'mode' => 'text',
         'numArgs' => 1,
         'numOptArgs' => 0,
-    ),
-    '\\backepsilon' => array(
+    ],
+    '\\backepsilon' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\backprime' => array(
+    ],
+    '\\backprime' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\backsim' => array(
+    ],
+    '\\backsim' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\backsimeq' => array(
+    ],
+    '\\backsimeq' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\backslash' => array(
+    ],
+    '\\backslash' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\bar' => array(
+    ],
+    '\\bar' => [
         'mode' => 'math',
         'numArgs' => 1,
         'numOptArgs' => 0,
-    ),
-    '\\barwedge' => array(
+    ],
+    '\\barwedge' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\Bbbk' => array(
+    ],
+    '\\Bbbk' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\because' => array(
+    ],
+    '\\because' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\beta' => array(
+    ],
+    '\\beta' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\beth' => array(
+    ],
+    '\\beth' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\between' => array(
+    ],
+    '\\between' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\bigcap' => array(
+    ],
+    '\\bigcap' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\bigcirc' => array(
+    ],
+    '\\bigcirc' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\bigcup' => array(
+    ],
+    '\\bigcup' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\bigodot' => array(
+    ],
+    '\\bigodot' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\bigoplus' => array(
+    ],
+    '\\bigoplus' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\bigotimes' => array(
+    ],
+    '\\bigotimes' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\bigsqcup' => array(
+    ],
+    '\\bigsqcup' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\bigstar' => array(
+    ],
+    '\\bigstar' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\bigtriangledown' => array(
+    ],
+    '\\bigtriangledown' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\bigtriangleup' => array(
+    ],
+    '\\bigtriangleup' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\biguplus' => array(
+    ],
+    '\\biguplus' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\bigvee' => array(
+    ],
+    '\\bigvee' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\bigwedge' => array(
+    ],
+    '\\bigwedge' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\blacklozenge' => array(
+    ],
+    '\\blacklozenge' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\blacksquare' => array(
+    ],
+    '\\blacksquare' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\blacktriangle' => array(
+    ],
+    '\\blacktriangle' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\blacktriangledown' => array(
+    ],
+    '\\blacktriangledown' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\blacktriangleleft' => array(
+    ],
+    '\\blacktriangleleft' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\blacktriangleright' => array(
+    ],
+    '\\blacktriangleright' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\bot' => array(
+    ],
+    '\\bot' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\bowtie' => array(
+    ],
+    '\\bowtie' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\Box' => array(
+    ],
+    '\\Box' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\boxdot' => array(
+    ],
+    '\\boxdot' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\boxminus' => array(
+    ],
+    '\\boxminus' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\boxplus' => array(
+    ],
+    '\\boxplus' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\boxtimes' => array(
+    ],
+    '\\boxtimes' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\bracevert' => array(
+    ],
+    '\\bracevert' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\breve' => array(
+    ],
+    '\\breve' => [
         'mode' => 'math',
         'numArgs' => 1,
         'numOptArgs' => 0,
-    ),
-    '\\bullet' => array(
+    ],
+    '\\bullet' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\Bumpeq' => array(
+    ],
+    '\\Bumpeq' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\bumpeq' => array(
+    ],
+    '\\bumpeq' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\c' => array(
+    ],
+    '\\c' => [
         'mode' => 'text',
         'numArgs' => 1,
         'numOptArgs' => 0,
-    ),
-    '\\Cap' => array(
+    ],
+    '\\Cap' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\cap' => array(
+    ],
+    '\\cap' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\cdot' => array(
+    ],
+    '\\cdot' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\cdotp' => array(
+    ],
+    '\\cdotp' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\cdots' => array(
+    ],
+    '\\cdots' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\centerdot' => array(
+    ],
+    '\\centerdot' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\chapter' => array(
+    ],
+    '\\chapter' => [
         'numArgs' => 1,
         'mode' => 'text',
         'starred' => true,
         'counter' => 'chapter',
-        'counterReset' => array(
+        'counterReset' => [
             0 => 'section',
             1 => 'subsection',
             2 => 'subsubsection',
             3 => 'paragraph',
             4 => 'subparagraph',
-        ),
-    ),
-    '\\check' => array(
+        ],
+    ],
+    '\\check' => [
         'mode' => 'math',
         'numArgs' => 1,
         'numOptArgs' => 0,
-    ),
-    '\\checkmark' => array(
+    ],
+    '\\checkmark' => [
         'mode' => 'both',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\chi' => array(
+    ],
+    '\\chi' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\circ' => array(
+    ],
+    '\\circ' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\circeq' => array(
+    ],
+    '\\circeq' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\circlearrowleft' => array(
+    ],
+    '\\circlearrowleft' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\circlearrowright' => array(
+    ],
+    '\\circlearrowright' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\circledast' => array(
+    ],
+    '\\circledast' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\circledcirc' => array(
+    ],
+    '\\circledcirc' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\circleddash' => array(
+    ],
+    '\\circleddash' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\circledR' => array(
+    ],
+    '\\circledR' => [
         'mode' => 'both',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\circledS' => array(
+    ],
+    '\\circledS' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\clubsuit' => array(
+    ],
+    '\\clubsuit' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\colon' => array(
+    ],
+    '\\colon' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\complement' => array(
+    ],
+    '\\complement' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\cong' => array(
+    ],
+    '\\cong' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\coprod' => array(
+    ],
+    '\\coprod' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\copyright' => array(
+    ],
+    '\\copyright' => [
         'mode' => 'both',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\cos' => array(
+    ],
+    '\\cos' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\cosh' => array(
+    ],
+    '\\cosh' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\cot' => array(
+    ],
+    '\\cot' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\coth' => array(
+    ],
+    '\\coth' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\csc' => array(
+    ],
+    '\\csc' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\Cup' => array(
+    ],
+    '\\Cup' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\cup' => array(
+    ],
+    '\\cup' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\curlyeqprec' => array(
+    ],
+    '\\curlyeqprec' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\curlyeqsucc' => array(
+    ],
+    '\\curlyeqsucc' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\curlyvee' => array(
+    ],
+    '\\curlyvee' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\curlywedge' => array(
+    ],
+    '\\curlywedge' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\curvearrowleft' => array(
+    ],
+    '\\curvearrowleft' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\curvearrowright' => array(
+    ],
+    '\\curvearrowright' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\d' => array(
+    ],
+    '\\d' => [
         'mode' => 'text',
         'numArgs' => 1,
         'numOptArgs' => 0,
-    ),
-    '\\dag' => array(
+    ],
+    '\\dag' => [
         'mode' => 'both',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\dagger' => array(
+    ],
+    '\\dagger' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\daleth' => array(
+    ],
+    '\\daleth' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\dashleftarrow' => array(
+    ],
+    '\\dashleftarrow' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\dashrightarrow' => array(
+    ],
+    '\\dashrightarrow' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\dashv' => array(
+    ],
+    '\\dashv' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\ddag' => array(
+    ],
+    '\\ddag' => [
         'mode' => 'both',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\ddagger' => array(
+    ],
+    '\\ddagger' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\ddot' => array(
+    ],
+    '\\ddot' => [
         'mode' => 'math',
         'numArgs' => 1,
         'numOptArgs' => 0,
-    ),
-    '\\ddots' => array(
+    ],
+    '\\ddots' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\deg' => array(
+    ],
+    '\\deg' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\Delta' => array(
+    ],
+    '\\Delta' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\delta' => array(
+    ],
+    '\\delta' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\det' => array(
+    ],
+    '\\det' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\diagdown' => array(
+    ],
+    '\\diagdown' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\diagup' => array(
+    ],
+    '\\diagup' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\Diamond' => array(
+    ],
+    '\\Diamond' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\diamond' => array(
+    ],
+    '\\diamond' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\diamondsuit' => array(
+    ],
+    '\\diamondsuit' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\digamma' => array(
+    ],
+    '\\digamma' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\dim' => array(
+    ],
+    '\\dim' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\div' => array(
+    ],
+    '\\div' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\divideontimes' => array(
+    ],
+    '\\divideontimes' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\dot' => array(
+    ],
+    '\\dot' => [
         'mode' => 'math',
         'numArgs' => 1,
         'numOptArgs' => 0,
-    ),
-    '\\Doteq' => array(
+    ],
+    '\\Doteq' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\doteq' => array(
+    ],
+    '\\doteq' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\doteqdot' => array(
+    ],
+    '\\doteqdot' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\dotplus' => array(
+    ],
+    '\\dotplus' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\dots' => array(
+    ],
+    '\\dots' => [
         'mode' => 'both',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\doublebarwedge' => array(
+    ],
+    '\\doublebarwedge' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\doublecap' => array(
+    ],
+    '\\doublecap' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\doublecup' => array(
+    ],
+    '\\doublecup' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\Downarrow' => array(
+    ],
+    '\\Downarrow' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\downarrow' => array(
+    ],
+    '\\downarrow' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\downdownarrows' => array(
+    ],
+    '\\downdownarrows' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\downharpoonleft' => array(
+    ],
+    '\\downharpoonleft' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\downharpoonright' => array(
+    ],
+    '\\downharpoonright' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\ell' => array(
+    ],
+    '\\ell' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\emph' => array(
+    ],
+    '\\emph' => [
         'mode' => 'both',
         'numArgs' => 1,
         'numOptArgs' => 0,
-    ),
-    '\\emptyset' => array(
+    ],
+    '\\emptyset' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\enspace' => array(
+    ],
+    '\\enspace' => [
         'mode' => 'both',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\epsilon' => array(
+    ],
+    '\\epsilon' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\eqcirc' => array(
+    ],
+    '\\eqcirc' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\eqsim' => array(
+    ],
+    '\\eqsim' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\eqslantgtr' => array(
+    ],
+    '\\eqslantgtr' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\eqslantless' => array(
+    ],
+    '\\eqslantless' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\equiv' => array(
+    ],
+    '\\equiv' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\eta' => array(
+    ],
+    '\\eta' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\eth' => array(
+    ],
+    '\\eth' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\exists' => array(
+    ],
+    '\\exists' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\exp' => array(
+    ],
+    '\\exp' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\fallingdotseq' => array(
+    ],
+    '\\fallingdotseq' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\Finv' => array(
+    ],
+    '\\Finv' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\flat' => array(
+    ],
+    '\\flat' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\forall' => array(
+    ],
+    '\\forall' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\frac' => array(
+    ],
+    '\\frac' => [
         'mode' => 'math',
         'numArgs' => 2,
         'numOptArgs' => 0,
-    ),
-    '\\frown' => array(
+    ],
+    '\\frown' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\Game' => array(
+    ],
+    '\\Game' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\Gamma' => array(
+    ],
+    '\\Gamma' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\gamma' => array(
+    ],
+    '\\gamma' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\gcd' => array(
+    ],
+    '\\gcd' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\geq' => array(
+    ],
+    '\\geq' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\geqq' => array(
+    ],
+    '\\geqq' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\geqslant' => array(
+    ],
+    '\\geqslant' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\gg' => array(
+    ],
+    '\\gg' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\ggg' => array(
+    ],
+    '\\ggg' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\gggtr' => array(
+    ],
+    '\\gggtr' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\gimel' => array(
+    ],
+    '\\gimel' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\gnapprox' => array(
+    ],
+    '\\gnapprox' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\gneq' => array(
+    ],
+    '\\gneq' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\gneqq' => array(
+    ],
+    '\\gneqq' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\gnsim' => array(
+    ],
+    '\\gnsim' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\grave' => array(
+    ],
+    '\\grave' => [
         'mode' => 'math',
         'numArgs' => 1,
         'numOptArgs' => 0,
-    ),
-    '\\gtrapprox' => array(
+    ],
+    '\\gtrapprox' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\gtrdot' => array(
+    ],
+    '\\gtrdot' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\gtreqless' => array(
+    ],
+    '\\gtreqless' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\gtreqqless' => array(
+    ],
+    '\\gtreqqless' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\gtrless' => array(
+    ],
+    '\\gtrless' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\gtrsim' => array(
+    ],
+    '\\gtrsim' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\gvertneqq' => array(
+    ],
+    '\\gvertneqq' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\H' => array(
+    ],
+    '\\H' => [
         'mode' => 'text',
         'numArgs' => 1,
         'numOptArgs' => 0,
-    ),
-    '\\hat' => array(
+    ],
+    '\\hat' => [
         'mode' => 'math',
         'numArgs' => 1,
         'numOptArgs' => 0,
-    ),
-    '\\hbar' => array(
+    ],
+    '\\hbar' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\heartsuit' => array(
+    ],
+    '\\heartsuit' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\hom' => array(
+    ],
+    '\\hom' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\hookleftarrow' => array(
+    ],
+    '\\hookleftarrow' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\hookrightarrow' => array(
+    ],
+    '\\hookrightarrow' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\href' => array(
+    ],
+    '\\href' => [
         'mode' => 'text',
         'numArgs' => 2,
         'numOptArgs' => 0,
-    ),
-    '\\hslash' => array(
+    ],
+    '\\hslash' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\Im' => array(
+    ],
+    '\\Im' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\imath' => array(
+    ],
+    '\\imath' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\in' => array(
+    ],
+    '\\in' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\inf' => array(
+    ],
+    '\\inf' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\infty' => array(
+    ],
+    '\\infty' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\injlim' => array(
+    ],
+    '\\injlim' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\int' => array(
+    ],
+    '\\int' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\intercal' => array(
+    ],
+    '\\intercal' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\item' => array(
+    ],
+    '\\item' => [
         'mode' => 'text',
-        'environs' => array(
+        'environs' => [
             0 => 'itemize',
             1 => 'enumerate',
-        ),
-    ),
-    '\\jmath' => array(
+        ],
+    ],
+    '\\jmath' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\k' => array(
+    ],
+    '\\k' => [
         'mode' => 'text',
         'numArgs' => 1,
         'numOptArgs' => 0,
-    ),
-    '\\kappa' => array(
+    ],
+    '\\kappa' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\ker' => array(
+    ],
+    '\\ker' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\label' => array(
+    ],
+    '\\label' => [
         'mode' => 'both',
         'numArgs' => 1,
         'numOptArgs' => 0,
-    ),
-    '\\Lambda' => array(
+    ],
+    '\\Lambda' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\lambda' => array(
+    ],
+    '\\lambda' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\langle' => array(
+    ],
+    '\\langle' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\LaTeX' => array(
+    ],
+    '\\LaTeX' => [
         'mode' => 'text',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\lceil' => array(
+    ],
+    '\\lceil' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\ldotp' => array(
+    ],
+    '\\ldotp' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\ldots' => array(
+    ],
+    '\\ldots' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\Leftarrow' => array(
+    ],
+    '\\Leftarrow' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\leftarrow' => array(
+    ],
+    '\\leftarrow' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\leftarrowtail' => array(
+    ],
+    '\\leftarrowtail' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\leftharpoondown' => array(
+    ],
+    '\\leftharpoondown' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\leftharpoonup' => array(
+    ],
+    '\\leftharpoonup' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\leftleftarrows' => array(
+    ],
+    '\\leftleftarrows' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\Leftrightarrow' => array(
+    ],
+    '\\Leftrightarrow' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\leftrightarrow' => array(
+    ],
+    '\\leftrightarrow' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\leftrightarrows' => array(
+    ],
+    '\\leftrightarrows' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\leftrightharpoons' => array(
+    ],
+    '\\leftrightharpoons' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\leftrightsquigarrow' => array(
+    ],
+    '\\leftrightsquigarrow' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\leftthreetimes' => array(
+    ],
+    '\\leftthreetimes' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\leq' => array(
+    ],
+    '\\leq' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\leqq' => array(
+    ],
+    '\\leqq' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\leqslant' => array(
+    ],
+    '\\leqslant' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\lessapprox' => array(
+    ],
+    '\\lessapprox' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\lessdot' => array(
+    ],
+    '\\lessdot' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\lesseqgtr' => array(
+    ],
+    '\\lesseqgtr' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\lesseqqgtr' => array(
+    ],
+    '\\lesseqqgtr' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\lessgtr' => array(
+    ],
+    '\\lessgtr' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\lesssim' => array(
+    ],
+    '\\lesssim' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\lfloor' => array(
+    ],
+    '\\lfloor' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\lg' => array(
+    ],
+    '\\lg' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\lgroup' => array(
+    ],
+    '\\lgroup' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\lim' => array(
+    ],
+    '\\lim' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\liminf' => array(
+    ],
+    '\\liminf' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\limsup' => array(
+    ],
+    '\\limsup' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\ll' => array(
+    ],
+    '\\ll' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\llcorner' => array(
+    ],
+    '\\llcorner' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\Lleftarrow' => array(
+    ],
+    '\\Lleftarrow' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\lll' => array(
+    ],
+    '\\lll' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\llless' => array(
+    ],
+    '\\llless' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\lmoustache' => array(
+    ],
+    '\\lmoustache' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\ln' => array(
+    ],
+    '\\ln' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\lnapprox' => array(
+    ],
+    '\\lnapprox' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\lneq' => array(
+    ],
+    '\\lneq' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\lneqq' => array(
+    ],
+    '\\lneqq' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\lnsim' => array(
+    ],
+    '\\lnsim' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\log' => array(
+    ],
+    '\\log' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\Longleftarrow' => array(
+    ],
+    '\\Longleftarrow' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\longleftarrow' => array(
+    ],
+    '\\longleftarrow' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\Longleftrightarrow' => array(
+    ],
+    '\\Longleftrightarrow' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\longleftrightarrow' => array(
+    ],
+    '\\longleftrightarrow' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\longmapsto' => array(
+    ],
+    '\\longmapsto' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\Longrightarrow' => array(
+    ],
+    '\\Longrightarrow' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\longrightarrow' => array(
+    ],
+    '\\longrightarrow' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\looparrowleft' => array(
+    ],
+    '\\looparrowleft' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\looparrowright' => array(
+    ],
+    '\\looparrowright' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\lozenge' => array(
+    ],
+    '\\lozenge' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\lrcorner' => array(
+    ],
+    '\\lrcorner' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\Lsh' => array(
+    ],
+    '\\Lsh' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\ltimes' => array(
+    ],
+    '\\ltimes' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\lVert' => array(
+    ],
+    '\\lVert' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\lvert' => array(
+    ],
+    '\\lvert' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\lvertneqq' => array(
+    ],
+    '\\lvertneqq' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\maltese' => array(
+    ],
+    '\\maltese' => [
         'mode' => 'both',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\mapsto' => array(
+    ],
+    '\\mapsto' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\mathbb' => array(
+    ],
+    '\\mathbb' => [
         'mode' => 'math',
         'numArgs' => 1,
         'numOptArgs' => 0,
-    ),
-    '\\mathcal' => array(
+    ],
+    '\\mathcal' => [
         'mode' => 'math',
         'numArgs' => 1,
         'numOptArgs' => 0,
-    ),
-    '\\mathdollar' => array(
+    ],
+    '\\mathdollar' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\mathellipsis' => array(
+    ],
+    '\\mathellipsis' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\mathfrak' => array(
+    ],
+    '\\mathfrak' => [
         'mode' => 'math',
         'numArgs' => 1,
         'numOptArgs' => 0,
-    ),
-    '\\mathit' => array(
+    ],
+    '\\mathit' => [
         'mode' => 'math',
         'numArgs' => 1,
         'numOptArgs' => 0,
-    ),
-    '\\mathnormal' => array(
+    ],
+    '\\mathnormal' => [
         'mode' => 'math',
         'numArgs' => 1,
         'numOptArgs' => 0,
-    ),
-    '\\mathparagraph' => array(
+    ],
+    '\\mathparagraph' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\mathrm' => array(
+    ],
+    '\\mathrm' => [
         'mode' => 'math',
         'numArgs' => 1,
         'numOptArgs' => 0,
-    ),
-    '\\mathsection' => array(
+    ],
+    '\\mathsection' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\mathsterling' => array(
+    ],
+    '\\mathsterling' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\mathunderscore' => array(
+    ],
+    '\\mathunderscore' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\max' => array(
+    ],
+    '\\max' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\measuredangle' => array(
+    ],
+    '\\measuredangle' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\mho' => array(
+    ],
+    '\\mho' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\mid' => array(
+    ],
+    '\\mid' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\min' => array(
+    ],
+    '\\min' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\models' => array(
+    ],
+    '\\models' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\mp' => array(
+    ],
+    '\\mp' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\mu' => array(
+    ],
+    '\\mu' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\multimap' => array(
+    ],
+    '\\multimap' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\nabla' => array(
+    ],
+    '\\nabla' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\natural' => array(
+    ],
+    '\\natural' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\ncong' => array(
+    ],
+    '\\ncong' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\nearrow' => array(
+    ],
+    '\\nearrow' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\neg' => array(
+    ],
+    '\\neg' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\neq' => array(
+    ],
+    '\\neq' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\newline' => array(
+    ],
+    '\\newline' => [
         'mode' => 'both',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\nexists' => array(
+    ],
+    '\\nexists' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\ngeq' => array(
+    ],
+    '\\ngeq' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\ngeqq' => array(
+    ],
+    '\\ngeqq' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\ngeqslant' => array(
+    ],
+    '\\ngeqslant' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\ngtr' => array(
+    ],
+    '\\ngtr' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\ni' => array(
+    ],
+    '\\ni' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\nLeftarrow' => array(
+    ],
+    '\\nLeftarrow' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\nleftarrow' => array(
+    ],
+    '\\nleftarrow' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\nLeftrightarrow' => array(
+    ],
+    '\\nLeftrightarrow' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\nleftrightarrow' => array(
+    ],
+    '\\nleftrightarrow' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\nleq' => array(
+    ],
+    '\\nleq' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\nleqq' => array(
+    ],
+    '\\nleqq' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\nleqslant' => array(
+    ],
+    '\\nleqslant' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\nless' => array(
+    ],
+    '\\nless' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\nmid' => array(
+    ],
+    '\\nmid' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\nparallel' => array(
+    ],
+    '\\nparallel' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\nprec' => array(
+    ],
+    '\\nprec' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\npreceq' => array(
+    ],
+    '\\npreceq' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\nRightarrow' => array(
+    ],
+    '\\nRightarrow' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\nrightarrow' => array(
+    ],
+    '\\nrightarrow' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\nshortmid' => array(
+    ],
+    '\\nshortmid' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\nshortparallel' => array(
+    ],
+    '\\nshortparallel' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\nsim' => array(
+    ],
+    '\\nsim' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\nsubseteq' => array(
+    ],
+    '\\nsubseteq' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\nsubseteqq' => array(
+    ],
+    '\\nsubseteqq' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\nsucc' => array(
+    ],
+    '\\nsucc' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\nsucceq' => array(
+    ],
+    '\\nsucceq' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\nsupseteq' => array(
+    ],
+    '\\nsupseteq' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\nsupseteqq' => array(
+    ],
+    '\\nsupseteqq' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\ntriangleleft' => array(
+    ],
+    '\\ntriangleleft' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\ntrianglelefteq' => array(
+    ],
+    '\\ntrianglelefteq' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\ntriangleright' => array(
+    ],
+    '\\ntriangleright' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\ntrianglerighteq' => array(
+    ],
+    '\\ntrianglerighteq' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\nu' => array(
+    ],
+    '\\nu' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\nVDash' => array(
+    ],
+    '\\nVDash' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\nVdash' => array(
+    ],
+    '\\nVdash' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\nvDash' => array(
+    ],
+    '\\nvDash' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\nvdash' => array(
+    ],
+    '\\nvdash' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\nwarrow' => array(
+    ],
+    '\\nwarrow' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\odot' => array(
+    ],
+    '\\odot' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\oint' => array(
+    ],
+    '\\oint' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\Omega' => array(
+    ],
+    '\\Omega' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\omega' => array(
+    ],
+    '\\omega' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\ominus' => array(
+    ],
+    '\\ominus' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\oplus' => array(
+    ],
+    '\\oplus' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\oslash' => array(
+    ],
+    '\\oslash' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\otimes' => array(
+    ],
+    '\\otimes' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\overbrace' => array(
+    ],
+    '\\overbrace' => [
         'mode' => 'math',
         'numArgs' => 1,
         'numOptArgs' => 0,
-    ),
-    '\\overleftarrow' => array(
+    ],
+    '\\overleftarrow' => [
         'mode' => 'math',
         'numArgs' => 1,
         'numOptArgs' => 0,
-    ),
-    '\\overline' => array(
+    ],
+    '\\overline' => [
         'mode' => 'math',
         'numArgs' => 1,
         'numOptArgs' => 0,
-    ),
-    '\\overrightarrow' => array(
+    ],
+    '\\overrightarrow' => [
         'mode' => 'math',
         'numArgs' => 1,
         'numOptArgs' => 0,
-    ),
-    '\\P' => array(
+    ],
+    '\\P' => [
         'mode' => 'both',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\pageref' => array(
+    ],
+    '\\pageref' => [
         'mode' => 'both',
         'numArgs' => 1,
         'numOptArgs' => 0,
-    ),
-    '\\par' => array(
+    ],
+    '\\par' => [
         'mode' => 'text',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\paragraph' => array(
+    ],
+    '\\paragraph' => [
         'numArgs' => 1,
         'mode' => 'text',
         'starred' => true,
         'counter' => 'paragraph',
-        'counterReset' => array(
+        'counterReset' => [
             0 => 'subparagraph',
-        ),
-    ),
-    '\\parallel' => array(
+        ],
+    ],
+    '\\parallel' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\partial' => array(
+    ],
+    '\\partial' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\perp' => array(
+    ],
+    '\\perp' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\Phi' => array(
+    ],
+    '\\Phi' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\phi' => array(
+    ],
+    '\\phi' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\Pi' => array(
+    ],
+    '\\Pi' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\pi' => array(
+    ],
+    '\\pi' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\pitchfork' => array(
+    ],
+    '\\pitchfork' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\pm' => array(
+    ],
+    '\\pm' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\pounds' => array(
+    ],
+    '\\pounds' => [
         'mode' => 'both',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\Pr' => array(
+    ],
+    '\\Pr' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\prec' => array(
+    ],
+    '\\prec' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\precapprox' => array(
+    ],
+    '\\precapprox' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\preccurlyeq' => array(
+    ],
+    '\\preccurlyeq' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\preceq' => array(
+    ],
+    '\\preceq' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\precnapprox' => array(
+    ],
+    '\\precnapprox' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\precneqq' => array(
+    ],
+    '\\precneqq' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\precnsim' => array(
+    ],
+    '\\precnsim' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\precsim' => array(
+    ],
+    '\\precsim' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\prime' => array(
+    ],
+    '\\prime' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\prod' => array(
+    ],
+    '\\prod' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\projlim' => array(
+    ],
+    '\\projlim' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\propto' => array(
+    ],
+    '\\propto' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\Psi' => array(
+    ],
+    '\\Psi' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\psi' => array(
+    ],
+    '\\psi' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\quad' => array(
+    ],
+    '\\quad' => [
         'mode' => 'both',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\rangle' => array(
+    ],
+    '\\rangle' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\rceil' => array(
+    ],
+    '\\rceil' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\Re' => array(
+    ],
+    '\\Re' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\ref' => array(
+    ],
+    '\\ref' => [
         'mode' => 'both',
         'numArgs' => 1,
         'numOptArgs' => 0,
-    ),
-    '\\restriction' => array(
+    ],
+    '\\restriction' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\rfloor' => array(
+    ],
+    '\\rfloor' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\rgroup' => array(
+    ],
+    '\\rgroup' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\rho' => array(
+    ],
+    '\\rho' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\Rightarrow' => array(
+    ],
+    '\\Rightarrow' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\rightarrow' => array(
+    ],
+    '\\rightarrow' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\rightarrowtail' => array(
+    ],
+    '\\rightarrowtail' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\rightharpoondown' => array(
+    ],
+    '\\rightharpoondown' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\rightharpoonup' => array(
+    ],
+    '\\rightharpoonup' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\rightleftarrows' => array(
+    ],
+    '\\rightleftarrows' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\rightleftharpoons' => array(
+    ],
+    '\\rightleftharpoons' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\rightrightarrows' => array(
+    ],
+    '\\rightrightarrows' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\rightsquigarrow' => array(
+    ],
+    '\\rightsquigarrow' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\rightthreetimes' => array(
+    ],
+    '\\rightthreetimes' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\risingdotseq' => array(
+    ],
+    '\\risingdotseq' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\rmoustache' => array(
+    ],
+    '\\rmoustache' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\Rrightarrow' => array(
+    ],
+    '\\Rrightarrow' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\Rsh' => array(
+    ],
+    '\\Rsh' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\rtimes' => array(
+    ],
+    '\\rtimes' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\rVert' => array(
+    ],
+    '\\rVert' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\rvert' => array(
+    ],
+    '\\rvert' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\S' => array(
+    ],
+    '\\S' => [
         'mode' => 'both',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\searrow' => array(
+    ],
+    '\\searrow' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\sec' => array(
+    ],
+    '\\sec' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\section' => array(
+    ],
+    '\\section' => [
         'numArgs' => 1,
         'mode' => 'text',
         'starred' => true,
         'counter' => 'section',
-        'counterReset' => array(
+        'counterReset' => [
             0 => 'subsection',
             1 => 'subsubsection',
             2 => 'paragraph',
             3 => 'subparagraph',
-        ),
-    ),
-    '\\setminus' => array(
+        ],
+    ],
+    '\\setminus' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\sharp' => array(
+    ],
+    '\\sharp' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\shortmid' => array(
+    ],
+    '\\shortmid' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\shortparallel' => array(
+    ],
+    '\\shortparallel' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\Sigma' => array(
+    ],
+    '\\Sigma' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\sigma' => array(
+    ],
+    '\\sigma' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\sim' => array(
+    ],
+    '\\sim' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\simeq' => array(
+    ],
+    '\\simeq' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\sin' => array(
+    ],
+    '\\sin' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\sinh' => array(
+    ],
+    '\\sinh' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\smallfrown' => array(
+    ],
+    '\\smallfrown' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\smallsetminus' => array(
+    ],
+    '\\smallsetminus' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\smallsmile' => array(
+    ],
+    '\\smallsmile' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\smile' => array(
+    ],
+    '\\smile' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\spadesuit' => array(
+    ],
+    '\\spadesuit' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\sphericalangle' => array(
+    ],
+    '\\sphericalangle' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\sqcap' => array(
+    ],
+    '\\sqcap' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\sqcup' => array(
+    ],
+    '\\sqcup' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\sqrt' => array(
+    ],
+    '\\sqrt' => [
         'mode' => 'math',
         'numArgs' => 1,
         'numOptArgs' => 1,
-    ),
-    '\\sqsubset' => array(
+    ],
+    '\\sqsubset' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\sqsubseteq' => array(
+    ],
+    '\\sqsubseteq' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\sqsupset' => array(
+    ],
+    '\\sqsupset' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\sqsupseteq' => array(
+    ],
+    '\\sqsupseteq' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\square' => array(
+    ],
+    '\\square' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\star' => array(
+    ],
+    '\\star' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\string' => array(
+    ],
+    '\\string' => [
         'numArgs' => 1,
         'parseArgs' => false,
         'mode' => 'both',
-    ),
-    '\\subparagraph' => array(
+    ],
+    '\\subparagraph' => [
         'numArgs' => 1,
         'mode' => 'text',
         'starred' => true,
         'counter' => 'subparagraph',
-    ),
-    '\\subsection' => array(
+    ],
+    '\\subsection' => [
         'numArgs' => 1,
         'mode' => 'text',
         'starred' => true,
         'counter' => 'subsection',
-        'counterReset' => array(
+        'counterReset' => [
             0 => 'subsubsection',
             1 => 'paragraph',
             2 => 'subparagraph',
-        ),
-    ),
-    '\\Subset' => array(
+        ],
+    ],
+    '\\Subset' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\subset' => array(
+    ],
+    '\\subset' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\subseteq' => array(
+    ],
+    '\\subseteq' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\subseteqq' => array(
+    ],
+    '\\subseteqq' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\subsetneq' => array(
+    ],
+    '\\subsetneq' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\subsetneqq' => array(
+    ],
+    '\\subsetneqq' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\subsubsection' => array(
+    ],
+    '\\subsubsection' => [
         'numArgs' => 1,
         'mode' => 'text',
         'starred' => true,
         'counter' => 'subsubsection',
-        'counterReset' => array(
+        'counterReset' => [
             0 => 'paragraph',
             1 => 'subparagraph',
-        ),
-    ),
-    '\\succ' => array(
+        ],
+    ],
+    '\\succ' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\succapprox' => array(
+    ],
+    '\\succapprox' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\succcurlyeq' => array(
+    ],
+    '\\succcurlyeq' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\succeq' => array(
+    ],
+    '\\succeq' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\succnapprox' => array(
+    ],
+    '\\succnapprox' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\succneqq' => array(
+    ],
+    '\\succneqq' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\succnsim' => array(
+    ],
+    '\\succnsim' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\succsim' => array(
+    ],
+    '\\succsim' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\sum' => array(
+    ],
+    '\\sum' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\sup' => array(
+    ],
+    '\\sup' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\Supset' => array(
+    ],
+    '\\Supset' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\supset' => array(
+    ],
+    '\\supset' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\supseteq' => array(
+    ],
+    '\\supseteq' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\supseteqq' => array(
+    ],
+    '\\supseteqq' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\supsetneq' => array(
+    ],
+    '\\supsetneq' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\supsetneqq' => array(
+    ],
+    '\\supsetneqq' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\surd' => array(
+    ],
+    '\\surd' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\swarrow' => array(
+    ],
+    '\\swarrow' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\t' => array(
+    ],
+    '\\t' => [
         'mode' => 'text',
         'numArgs' => 1,
         'numOptArgs' => 0,
-    ),
-    '\\tan' => array(
+    ],
+    '\\tan' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\tanh' => array(
+    ],
+    '\\tanh' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\tau' => array(
+    ],
+    '\\tau' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\TeX' => array(
+    ],
+    '\\TeX' => [
         'mode' => 'text',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\text' => array(
+    ],
+    '\\text' => [
         'mode' => 'both',
         'numArgs' => 1,
         'numOptArgs' => 0,
-    ),
-    '\\textasciicircum' => array(
+    ],
+    '\\textasciicircum' => [
         'mode' => 'text',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\textasciitilde' => array(
+    ],
+    '\\textasciitilde' => [
         'mode' => 'text',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\textasteriskcentered' => array(
+    ],
+    '\\textasteriskcentered' => [
         'mode' => 'text',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\textbackslash' => array(
+    ],
+    '\\textbackslash' => [
         'mode' => 'text',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\textbar' => array(
+    ],
+    '\\textbar' => [
         'mode' => 'text',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\textbardbl' => array(
+    ],
+    '\\textbardbl' => [
         'mode' => 'text',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\textbf' => array(
+    ],
+    '\\textbf' => [
         'mode' => 'both',
         'numArgs' => 1,
         'numOptArgs' => 0,
-    ),
-    '\\textbigcircle' => array(
+    ],
+    '\\textbigcircle' => [
         'mode' => 'text',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\textbraceleft' => array(
+    ],
+    '\\textbraceleft' => [
         'mode' => 'text',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\textbraceright' => array(
+    ],
+    '\\textbraceright' => [
         'mode' => 'text',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\textbullet' => array(
+    ],
+    '\\textbullet' => [
         'mode' => 'text',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\textcopyright' => array(
+    ],
+    '\\textcopyright' => [
         'mode' => 'text',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\textdagger' => array(
+    ],
+    '\\textdagger' => [
         'mode' => 'text',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\textdaggerdbl' => array(
+    ],
+    '\\textdaggerdbl' => [
         'mode' => 'text',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\textdollar' => array(
+    ],
+    '\\textdollar' => [
         'mode' => 'text',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\textellipsis' => array(
+    ],
+    '\\textellipsis' => [
         'mode' => 'text',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\textemdash' => array(
+    ],
+    '\\textemdash' => [
         'mode' => 'text',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\textendash' => array(
+    ],
+    '\\textendash' => [
         'mode' => 'text',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\textexclamdown' => array(
+    ],
+    '\\textexclamdown' => [
         'mode' => 'text',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\textgreater' => array(
+    ],
+    '\\textgreater' => [
         'mode' => 'text',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\textit' => array(
+    ],
+    '\\textit' => [
         'mode' => 'both',
         'numArgs' => 1,
         'numOptArgs' => 0,
-    ),
-    '\\textless' => array(
+    ],
+    '\\textless' => [
         'mode' => 'text',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\textordfeminine' => array(
+    ],
+    '\\textordfeminine' => [
         'mode' => 'text',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\textordmasculine' => array(
+    ],
+    '\\textordmasculine' => [
         'mode' => 'text',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\textparagraph' => array(
+    ],
+    '\\textparagraph' => [
         'mode' => 'text',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\textperiodcentered' => array(
+    ],
+    '\\textperiodcentered' => [
         'mode' => 'text',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\textpertenthousand' => array(
+    ],
+    '\\textpertenthousand' => [
         'mode' => 'text',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\textperthousand' => array(
+    ],
+    '\\textperthousand' => [
         'mode' => 'text',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\textquestiondown' => array(
+    ],
+    '\\textquestiondown' => [
         'mode' => 'text',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\textquotedblleft' => array(
+    ],
+    '\\textquotedblleft' => [
         'mode' => 'text',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\textquotedblright' => array(
+    ],
+    '\\textquotedblright' => [
         'mode' => 'text',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\textquoteleft' => array(
+    ],
+    '\\textquoteleft' => [
         'mode' => 'text',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\textquoteright' => array(
+    ],
+    '\\textquoteright' => [
         'mode' => 'text',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\textregistered' => array(
+    ],
+    '\\textregistered' => [
         'mode' => 'text',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\textrm' => array(
+    ],
+    '\\textrm' => [
         'mode' => 'both',
         'numArgs' => 1,
         'numOptArgs' => 0,
-    ),
-    '\\textsection' => array(
+    ],
+    '\\textsection' => [
         'mode' => 'text',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\textsf' => array(
+    ],
+    '\\textsf' => [
         'mode' => 'both',
         'numArgs' => 1,
         'numOptArgs' => 0,
-    ),
-    '\\textsterling' => array(
+    ],
+    '\\textsterling' => [
         'mode' => 'text',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\textsubscript' => array(
+    ],
+    '\\textsubscript' => [
         'mode' => 'both',
         'numArgs' => 1,
         'numOptArgs' => 0,
-    ),
-    '\\textsuperscript' => array(
+    ],
+    '\\textsuperscript' => [
         'mode' => 'both',
         'numArgs' => 1,
         'numOptArgs' => 0,
-    ),
-    '\\texttrademark' => array(
+    ],
+    '\\texttrademark' => [
         'mode' => 'text',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\texttt' => array(
+    ],
+    '\\texttt' => [
         'mode' => 'both',
         'numArgs' => 1,
         'numOptArgs' => 0,
-    ),
-    '\\textunderscore' => array(
+    ],
+    '\\textunderscore' => [
         'mode' => 'text',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\textup' => array(
+    ],
+    '\\textup' => [
         'mode' => 'both',
         'numArgs' => 1,
         'numOptArgs' => 0,
-    ),
-    '\\textvisiblespace' => array(
+    ],
+    '\\textvisiblespace' => [
         'mode' => 'text',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\therefore' => array(
+    ],
+    '\\therefore' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\Theta' => array(
+    ],
+    '\\Theta' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\theta' => array(
+    ],
+    '\\theta' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\thickapprox' => array(
+    ],
+    '\\thickapprox' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\thicksim' => array(
+    ],
+    '\\thicksim' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\tilde' => array(
+    ],
+    '\\tilde' => [
         'mode' => 'math',
         'numArgs' => 1,
         'numOptArgs' => 0,
-    ),
-    '\\times' => array(
+    ],
+    '\\times' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\top' => array(
+    ],
+    '\\top' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\triangle' => array(
+    ],
+    '\\triangle' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\triangledown' => array(
+    ],
+    '\\triangledown' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\triangleleft' => array(
+    ],
+    '\\triangleleft' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\trianglelefteq' => array(
+    ],
+    '\\trianglelefteq' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\triangleq' => array(
+    ],
+    '\\triangleq' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\triangleright' => array(
+    ],
+    '\\triangleright' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\trianglerighteq' => array(
+    ],
+    '\\trianglerighteq' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\twoheadleftarrow' => array(
+    ],
+    '\\twoheadleftarrow' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\twoheadrightarrow' => array(
+    ],
+    '\\twoheadrightarrow' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\u' => array(
+    ],
+    '\\u' => [
         'mode' => 'text',
         'numArgs' => 1,
         'numOptArgs' => 0,
-    ),
-    '\\ulcorner' => array(
+    ],
+    '\\ulcorner' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\underbrace' => array(
+    ],
+    '\\underbrace' => [
         'mode' => 'math',
         'numArgs' => 1,
         'numOptArgs' => 0,
-    ),
-    '\\underline' => array(
+    ],
+    '\\underline' => [
         'mode' => 'math',
         'numArgs' => 1,
         'numOptArgs' => 0,
-    ),
-    '\\Uparrow' => array(
+    ],
+    '\\Uparrow' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\uparrow' => array(
+    ],
+    '\\uparrow' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\Updownarrow' => array(
+    ],
+    '\\Updownarrow' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\updownarrow' => array(
+    ],
+    '\\updownarrow' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\upharpoonleft' => array(
+    ],
+    '\\upharpoonleft' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\upharpoonright' => array(
+    ],
+    '\\upharpoonright' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\uplus' => array(
+    ],
+    '\\uplus' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\Upsilon' => array(
+    ],
+    '\\Upsilon' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\upsilon' => array(
+    ],
+    '\\upsilon' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\upuparrows' => array(
+    ],
+    '\\upuparrows' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\urcorner' => array(
+    ],
+    '\\urcorner' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\url' => array(
+    ],
+    '\\url' => [
         'mode' => 'text',
         'numArgs' => 1,
         'numOptArgs' => 0,
-    ),
-    '\\v' => array(
+    ],
+    '\\v' => [
         'mode' => 'text',
         'numArgs' => 1,
         'numOptArgs' => 0,
-    ),
-    '\\varepsilon' => array(
+    ],
+    '\\varepsilon' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\varinjlim' => array(
+    ],
+    '\\varinjlim' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\varkappa' => array(
+    ],
+    '\\varkappa' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\varliminf' => array(
+    ],
+    '\\varliminf' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\varlimsup' => array(
+    ],
+    '\\varlimsup' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\varnothing' => array(
+    ],
+    '\\varnothing' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\varphi' => array(
+    ],
+    '\\varphi' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\varpi' => array(
+    ],
+    '\\varpi' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\varprojlim' => array(
+    ],
+    '\\varprojlim' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\varpropto' => array(
+    ],
+    '\\varpropto' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\varrho' => array(
+    ],
+    '\\varrho' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\varsigma' => array(
+    ],
+    '\\varsigma' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\varsubsetneq' => array(
+    ],
+    '\\varsubsetneq' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\varsubsetneqq' => array(
+    ],
+    '\\varsubsetneqq' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\varsupsetneq' => array(
+    ],
+    '\\varsupsetneq' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\varsupsetneqq' => array(
+    ],
+    '\\varsupsetneqq' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\vartheta' => array(
+    ],
+    '\\vartheta' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\vartriangle' => array(
+    ],
+    '\\vartriangle' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\vartriangleleft' => array(
+    ],
+    '\\vartriangleleft' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\vartriangleright' => array(
+    ],
+    '\\vartriangleright' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\Vdash' => array(
+    ],
+    '\\Vdash' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\vDash' => array(
+    ],
+    '\\vDash' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\vdash' => array(
+    ],
+    '\\vdash' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\vdots' => array(
+    ],
+    '\\vdots' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\vec' => array(
+    ],
+    '\\vec' => [
         'mode' => 'math',
         'numArgs' => 1,
         'numOptArgs' => 0,
-    ),
-    '\\vee' => array(
+    ],
+    '\\vee' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\veebar' => array(
+    ],
+    '\\veebar' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\Vvdash' => array(
+    ],
+    '\\Vvdash' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\wedge' => array(
+    ],
+    '\\wedge' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\widehat' => array(
+    ],
+    '\\widehat' => [
         'mode' => 'math',
         'numArgs' => 1,
         'numOptArgs' => 0,
-    ),
-    '\\widetilde' => array(
+    ],
+    '\\widetilde' => [
         'mode' => 'math',
         'numArgs' => 1,
         'numOptArgs' => 0,
-    ),
-    '\\wp' => array(
+    ],
+    '\\wp' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\wr' => array(
+    ],
+    '\\wr' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\Xi' => array(
+    ],
+    '\\Xi' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\xi' => array(
+    ],
+    '\\xi' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\yen' => array(
+    ],
+    '\\yen' => [
         'mode' => 'both',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\zeta' => array(
+    ],
+    '\\zeta' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\{' => array(
+    ],
+    '\\{' => [
         'mode' => 'both',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\|' => array(
+    ],
+    '\\|' => [
         'mode' => 'math',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\}' => array(
+    ],
+    '\\}' => [
         'mode' => 'both',
         'numArgs' => 0,
         'numOptArgs' => 0,
-    ),
-    '\\~' => array(
+    ],
+    '\\~' => [
         'mode' => 'text',
         'numArgs' => 1,
         'numOptArgs' => 0,
-    ),
-);
+    ],
+];

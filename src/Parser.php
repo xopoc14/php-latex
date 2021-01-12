@@ -1,10 +1,12 @@
 <?php
 
+namespace Xopoc14\PhpLatex;
+
 /**
  * This parser attempts to create LaTeX document tree, which by stringified
  * creates semantically correct and valid LaTeX document.
  */
-class PhpLatex_Parser
+class Parser
 {
     // Supported grammar for top-down parser
     //
@@ -19,18 +21,18 @@ class PhpLatex_Parser
     const MODE_TEXT = 1;
     const MODE_BOTH = 3;
 
-    const STATE_TEXT    = 1;
-    const STATE_MATH    = 2;
-    const STATE_ARG     = 4;
+    const STATE_TEXT = 1;
+    const STATE_MATH = 2;
+    const STATE_ARG = 4;
     const STATE_OPT_ARG = 8;
 
     const TYPE_DOCUMENT = 'document';
-    const TYPE_TEXT     = 'text';
-    const TYPE_MATH     = 'math';
-    const TYPE_GROUP    = 'group';
-    const TYPE_SPECIAL  = 'special';
-    const TYPE_COMMAND  = 'command';
-    const TYPE_ENVIRON  = 'environ';
+    const TYPE_TEXT = 'text';
+    const TYPE_MATH = 'math';
+    const TYPE_GROUP = 'group';
+    const TYPE_SPECIAL = 'special';
+    const TYPE_COMMAND = 'command';
+    const TYPE_ENVIRON = 'environ';
     const TYPE_VERBATIM = 'verbatim';
 
     protected $_lexer;
@@ -53,13 +55,13 @@ class PhpLatex_Parser
      *
      * @var array
      */
-    protected $_environs = array();
-    protected $_commands = array();
+    protected $_environs = [];
+    protected $_commands = [];
 
     protected $_skipUndefinedCommands = true;
     protected $_skipUndefinedEnvirons = true;
 
-    protected $refs = array();
+    protected $refs = [];
 
     public function __construct()
     {
@@ -101,20 +103,20 @@ class PhpLatex_Parser
             $mode = self::MODE_BOTH;
         }
 
-        $this->_commands[$name] = array(
+        $this->_commands[$name] = [
             'mode' => $mode,
             'numArgs' => isset($options['numArgs']) ? intval($options['numArgs']) : 0,
             'numOptArgs' => isset($options['numOptArgs']) ? intval($options['numOptArgs']) : 0,
             'parseArgs' => !isset($options['parseArgs']) || $options['parseArgs'], // parse by default
             'starred' => isset($options['starred']) ? $options['starred'] : false,
-        );
+        ];
         return $this;
     } // }}}
 
     public function addCommands(array $commands) // {{{
     {
         foreach ($commands as $name => $spec) {
-            $this->addCommand($name, (array) $spec);
+            $this->addCommand($name, (array)$spec);
         }
         return $this;
     } // }}}
@@ -135,15 +137,15 @@ class PhpLatex_Parser
         do {
             $id = $this->_getRandomString(8);
         } while (isset($this->_verbatims[$id]));
-        $this->_verbatims[$id] = array(
+        $this->_verbatims[$id] = [
             'name' => $match['name'],
             'content' => $match['content'],
-        );
+        ];
         return "\\verbatim" . $id . " ";
     }
 
     protected $_token;
-    protected $_tokenQueue = array();
+    protected $_tokenQueue = [];
 
     /**
      * Read next token from lexer.
@@ -195,7 +197,7 @@ class PhpLatex_Parser
 
     public function parse($str)
     {
-        $this->_verbatims = array();
+        $this->_verbatims = [];
 
         // smart comments: when a digit precedes a percent sign it is not
         // considered as start of comment
@@ -223,11 +225,11 @@ class PhpLatex_Parser
             // negative lookbehind to make sure \begin is not escaped
             $rx = '/(?<!\\\\)\\\\begin\s*\{(?P<name>' . $name . ')\}(?P<content>(.|\s)*?)\\\\end\s*\{\1\}/';
 
-            $str = preg_replace_callback($rx, array($this, '_readVerbatim'), $str);
+            $str = preg_replace_callback($rx, [$this, '_readVerbatim'], $str);
         }
 
-        $this->_lexer = new PhpLatex_Lexer($str);
-        $root = new PhpLatex_Node(self::TYPE_DOCUMENT);
+        $this->_lexer = new Lexer($str);
+        $root = new Node(self::TYPE_DOCUMENT);
         $this->_parseExprList($root, null, self::MODE_TEXT);
 
         // scan parsed tree in infix mode, assign numberings and refs and labels
@@ -236,13 +238,13 @@ class PhpLatex_Parser
     }
 
     /**
-     * @param  string $stopAtToken
-     * @param  string $state
+     * @param string $stopAtToken
+     * @param string $state
      * @return array
      */
-    protected function _parseExprList(PhpLatex_Node $parent, $stopAtToken, $state, $environ = null) // {{{
+    protected function _parseExprList(Node $parent, $stopAtToken, $state, $environ = null) // {{{
     {
-        $tree = array();
+        $tree = [];
         while (false !== ($token = $this->_peek())) {
             if ($token['value'] === $stopAtToken) {
                 // consume terminating token
@@ -262,18 +264,18 @@ class PhpLatex_Parser
         $token = $this->_next();
         if ($token) {
             switch ($token['type']) {
-                case PhpLatex_Lexer::TYPE_CSYMBOL:
-                case PhpLatex_Lexer::TYPE_CWORD:
+                case Lexer::TYPE_CSYMBOL:
+                case Lexer::TYPE_CWORD:
                     return $this->_parseControl($token, $state, $environ);
 
-                case PhpLatex_Lexer::TYPE_SPECIAL:
+                case Lexer::TYPE_SPECIAL:
                     return $this->_parseSpecial($token, $state, $environ);
 
-                case PhpLatex_Lexer::TYPE_SPACE:
-                case PhpLatex_Lexer::TYPE_TEXT:
+                case Lexer::TYPE_SPACE:
+                case Lexer::TYPE_TEXT:
                     return $this->_parseText($token, $state);
 
-                case PhpLatex_Lexer::TYPE_COMMENT:
+                case Lexer::TYPE_COMMENT:
                     $this->_skipSpaces();
                     break;
 
@@ -286,17 +288,17 @@ class PhpLatex_Parser
     } // }}}
 
     /**
-     * @param  string $type
-     * @param  int $mode
-     * @param  string $environ
-     * @return PhpLatex_Node
+     * @param string $type
+     * @param int $mode
+     * @param string $environ
+     * @return Node
      */
     protected function _createNode($type, $mode, $environ = null) // {{{
     {
-        return new PhpLatex_Node($type, array(
+        return new Node($type, [
             'mode' => intval($mode),
             'environ' => null === $environ ? null : strval($environ),
-        ));
+        ]);
     } // }}}
 
     /**
@@ -306,7 +308,7 @@ class PhpLatex_Parser
      *     mode the tested environment is encountered in
      * @param string $environ
      *     OPTIONAL name of a parent environment
-     * @return PhpLatex_Node
+     * @return Node
      * @throws Exception
      *     when environment is encountered in invalid mode or
      *     when environment can't be nested within the parent environment
@@ -316,7 +318,7 @@ class PhpLatex_Parser
         assert(($mode & ($mode - 1)) === 0); // mode must be a power of 2
 
         $math = false;
-        $args = array();
+        $args = [];
 
         if (isset($this->_environs[$name])) {
             $spec = $this->_environs[$name];
@@ -331,7 +333,7 @@ class PhpLatex_Parser
             // are given, check if the parent environ is a valid container
             if (null !== $environ &&
                 (empty($spec['environs']) ||
-                    !in_array($environ, (array) $spec['environs'], true))
+                    !in_array($environ, (array)$spec['environs'], true))
             ) {
                 throw new Exception('Environment ' . $name . ' cannot be nested in ' . $environ . ' environment');
             }
@@ -376,10 +378,10 @@ class PhpLatex_Parser
     {
         // if in text mode try first to parse math
         // predefined delimiters: left, right, inline
-        $mathControls = array(
-            array('\\(', '\\)', true),
-            array('\\[', '\\]', false),
-        );
+        $mathControls = [
+            ['\\(', '\\)', true],
+            ['\\[', '\\]', false],
+        ];
         foreach ($mathControls as $pair) {
             if ($token['value'] === $pair[0]) {
                 if ($mode === self::MODE_TEXT) {
@@ -404,10 +406,10 @@ class PhpLatex_Parser
     /**
      * Parse verbatim placeholder.
      *
-     * @param  array $token
-     * @param  int $mode
-     * @param  string $environ OPTIONAL
-     * @return PhpLatex_Node
+     * @param array $token
+     * @param int $mode
+     * @param string $environ OPTIONAL
+     * @return Node
      * @throws Exception
      */
     protected function _tryParseVerbatimControl($token, $mode, $environ = null) // {{{
@@ -435,7 +437,7 @@ class PhpLatex_Parser
 
     /**
      * Parse control sequence
-     * @return false|PhpLatex_Node
+     * @return false|Node
      */
     protected function _parseControl($token, $mode, $environ = null) // {{{
     {
@@ -505,15 +507,15 @@ class PhpLatex_Parser
         //
         // Skip all spaces and comments occuring after this token, if this
         // token is a control word.
-        if ($token['type'] === PhpLatex_Lexer::TYPE_CWORD) {
+        if ($token['type'] === Lexer::TYPE_CWORD) {
             $this->_skipSpaces();
         }
 
         $mathWrapper = null;
 
         $nodeMode = $mode;
-        $nodeArgs = array();
-        $nodeOptArgs = array();
+        $nodeArgs = [];
+        $nodeOptArgs = [];
         $nodeStarred = false;
 
         // validate control sequence and parse arguments
@@ -523,7 +525,7 @@ class PhpLatex_Parser
             // check if this command requires an environment, if so, check
             // if current environment is among listed ones
             if (isset($spec['environs']) &&
-                !in_array($environ, (array) $spec['environs'], true)
+                !in_array($environ, (array)$spec['environs'], true)
             ) {
                 return false;
             }
@@ -546,7 +548,7 @@ class PhpLatex_Parser
             // parse any the following asterisk token
             if ((isset($spec['starred']) && $spec['starred']) &&
                 ($next = $this->_peek()) &&
-                ($next['type'] === PhpLatex_Lexer::TYPE_TEXT) &&
+                ($next['type'] === Lexer::TYPE_TEXT) &&
                 (0 === strncmp($next['value'], '*', 1))
             ) {
                 $this->_next();
@@ -588,7 +590,7 @@ class PhpLatex_Parser
         $node = $this->_createNode(self::TYPE_COMMAND, $nodeMode, $environ);
         $node->value = $value;
 
-        if ($token['type'] === PhpLatex_Lexer::TYPE_CSYMBOL) {
+        if ($token['type'] === Lexer::TYPE_CSYMBOL) {
             $node->symbol = true; // control symbol
         }
 
@@ -621,8 +623,8 @@ class PhpLatex_Parser
     protected function _skipSpaces() // {{{
     {
         while ($next = $this->_peek()) {
-            if ($next['type'] === PhpLatex_Lexer::TYPE_SPACE ||
-                $next['type'] === PhpLatex_Lexer::TYPE_COMMENT
+            if ($next['type'] === Lexer::TYPE_SPACE ||
+                $next['type'] === Lexer::TYPE_COMMENT
             ) {
                 $this->_next();
             } else {
@@ -637,7 +639,7 @@ class PhpLatex_Parser
 
         if ($next = $this->_peek()) {
             switch ($next['type']) {
-                case PhpLatex_Lexer::TYPE_SPECIAL:
+                case Lexer::TYPE_SPECIAL:
                     switch ($next['value']) {
                         case '{':
                             // if args are not to be parsed consume all contents up to the
@@ -647,7 +649,7 @@ class PhpLatex_Parser
                                 $this->_next();
                                 $text = '';
                                 while ($next = $this->_peek()) {
-                                    if ($next['type'] === PhpLatex_Lexer::TYPE_SPECIAL
+                                    if ($next['type'] === Lexer::TYPE_SPECIAL
                                         && $next['value'] === '}') {
                                         $this->_next();
                                         break;
@@ -695,7 +697,7 @@ class PhpLatex_Parser
                     }
                     break;
 
-                case PhpLatex_Lexer::TYPE_TEXT:
+                case Lexer::TYPE_TEXT:
                     // found text token, extract first character, leave the
                     // rest of its value for further processing
                     $this->_next();
@@ -713,8 +715,8 @@ class PhpLatex_Parser
 
                     return $group;
 
-                case PhpLatex_Lexer::TYPE_CWORD:
-                case PhpLatex_Lexer::TYPE_CSYMBOL:
+                case Lexer::TYPE_CWORD:
+                case Lexer::TYPE_CSYMBOL:
                     // found control sequence
 
                     if ($next['value'] === '\\par') {
@@ -747,7 +749,7 @@ class PhpLatex_Parser
         $this->_skipSpaces();
 
         if (($next = $this->_peek()) &&
-            ($next['type'] === PhpLatex_Lexer::TYPE_SPECIAL) &&
+            ($next['type'] === Lexer::TYPE_SPECIAL) &&
             ($next['value'] === '[')
         ) {
             $this->_next();
@@ -773,8 +775,8 @@ class PhpLatex_Parser
     protected function _parseEnvName() // {{{
     {
         while (false !== ($next = $this->_peek())) {
-            if ($next['type'] === PhpLatex_Lexer::TYPE_SPACE ||
-                $next['type'] === PhpLatex_Lexer::TYPE_COMMENT
+            if ($next['type'] === Lexer::TYPE_SPACE ||
+                $next['type'] === Lexer::TYPE_COMMENT
             ) {
                 // 1. skip spaces and comments
                 $this->_next();
@@ -823,7 +825,7 @@ class PhpLatex_Parser
      * Build text node starting from current token and by appending any
      * following text, space and square bracket tokens.
      *
-     * @param PhpLatex_Node $parent
+     * @param Node $parent
      * @param array $token
      */
     protected function _parseText($token, $state) // {{{
@@ -847,7 +849,7 @@ class PhpLatex_Parser
     } // }}}
 
     /**
-     * @param PhpLatex_Node $parent
+     * @param Node $parent
      * @param array $token
      * @param int $state
      * @param string $environ
@@ -868,7 +870,7 @@ class PhpLatex_Parser
             case '$':
                 if ($state & self::STATE_TEXT) {
                     if (($next = $this->_peek())) {
-                        $node = new PhpLatex_Node(self::TYPE_MATH);
+                        $node = new Node(self::TYPE_MATH);
                         $node->mode = $state;
                         if ($next['value'] === '$') { // displaymath
                             $node->inline = false;
@@ -934,7 +936,7 @@ class PhpLatex_Parser
                     $node->value = '\\&';
                     return $node;
                 }
-                // otherwise fall through to get special
+            // otherwise fall through to get special
 
             case '~':
                 $node = $this->_createNode(self::TYPE_SPECIAL, $state);
@@ -957,14 +959,14 @@ class PhpLatex_Parser
     {
         $type = $token['type'];
 
-        return $type === PhpLatex_Lexer::TYPE_TEXT
-            || $type === PhpLatex_Lexer::TYPE_SPACE
-            || ($type === PhpLatex_Lexer::TYPE_SPECIAL
+        return $type === Lexer::TYPE_TEXT
+            || $type === Lexer::TYPE_SPACE
+            || ($type === Lexer::TYPE_SPECIAL
                 && ($token['value'] === '[' || (
-                    // right square bracket is treated as special when
-                    // encountered during parsing of optional arguments
-                    $token['value'] === ']' && !($state & self::STATE_OPT_ARG)
-                ))
+                        // right square bracket is treated as special when
+                        // encountered during parsing of optional arguments
+                        $token['value'] === ']' && !($state & self::STATE_OPT_ARG)
+                    ))
             );
     } // }}}
 }

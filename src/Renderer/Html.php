@@ -1,52 +1,54 @@
 <?php
 
-class PhpLatex_Renderer_Html extends PhpLatex_Renderer_Abstract
+namespace Xopoc14\PhpLatex\Renderer;
+
+use Xopoc14\PhpLatex\Utils\PeekableArrayIterator;
+use Xopoc14\PhpLatex\Utils\PeekableIterator;
+use Xopoc14\PhpLatex\Node;
+
+class Html extends AbstractRenderer
 {
     const FLAG_IGNORE_PAR = 1;
-    const FLAG_PAR2BR     = 4;
-    const FLAG_ARG        = 2;
-    const FLAG_ITEM       = self::FLAG_PAR2BR;
+    const FLAG_PAR2BR = 4;
+    const FLAG_ARG = 2;
+    const FLAG_ITEM = self::FLAG_PAR2BR;
 
-    protected $_commands = array(
+    protected $_commands = [];
 
-
-
-    );
-
-    protected $_par = array();
+    protected $_par = [];
 
     /**
-     * @var PhpLatex_Renderer_Typestyle
+     * @var Typestyle
      */
     protected $_typestyle;
 
     /**
-     * @var PhpLatex_Parser
+     * @var Parser
      */
     protected $_parser;
 
     /**
-     * @param PhpLatex_Parser $parser
-     * @return PhpLatex_Renderer_Html
+     * @param Parser $parser
+     * @return Html
      */
-    public function setParser(PhpLatex_Parser $parser)
+    public function setParser(Parser $parser)
     {
         $this->_parser = $parser;
         return $this;
     }
 
     /**
-     * @return PhpLatex_Parser
+     * @return Parser
      */
     public function getParser()
     {
         if ($this->_parser === null) {
-            $this->_parser = new PhpLatex_Parser();
+            $this->_parser = new Parser();
         }
         return $this->_parser;
     }
 
-    protected function _renderItem($node, PhpLatex_Utils_PeekableIterator $it) // {{{
+    protected function _renderItem($node, PeekableIterator $it) // {{{
     {
         $html = '';
 
@@ -57,12 +59,12 @@ class PhpLatex_Renderer_Html extends PhpLatex_Renderer_Abstract
         }
 
         // stop rendering at first \item control word
-        while (($n = $it->current()) && ($n->getType() !== PhpLatex_Parser::TYPE_COMMAND || $n->value !== '\\item')) {
+        while (($n = $it->current()) && ($n->getType() !== Parser::TYPE_COMMAND || $n->value !== '\\item')) {
             // consecutive \par macros inside \item are interpreted
             // as a single \newline
             $html .= $this->_renderNode($n, self::FLAG_PAR2BR);
             $next = $it->peek();
-            if ($next && ($next->getType() !== PhpLatex_Parser::TYPE_COMMAND || $next->value !== '\\item')) {
+            if ($next && ($next->getType() !== Parser::TYPE_COMMAND || $next->value !== '\\item')) {
                 $it->next();
             } else {
                 break;
@@ -82,7 +84,7 @@ class PhpLatex_Renderer_Html extends PhpLatex_Renderer_Abstract
     protected function __renderText($text)
     {
         return str_replace(
-            array(
+            [
                 "\n",
                 '---', '--',
                 ',,', '``',
@@ -90,16 +92,16 @@ class PhpLatex_Renderer_Html extends PhpLatex_Renderer_Abstract
                 '`', '\'',
                 '<<', '>>',
                 '<', '>',
-            ),
-            array(
+            ],
+            [
                 ' ',
                 '&mdash;', '&ndash;',
                 '&bdquo;', '&ldquo;',
                 '&rdquo;', '&rdquo;',
                 '&lsquo;', '&rsquo;',
                 '&laquo;', '&raquo;',
-                '&lt;' ,'&gt;',
-            ),
+                '&lt;', '&gt;',
+            ],
             $text
         );
     }
@@ -115,7 +117,7 @@ class PhpLatex_Renderer_Html extends PhpLatex_Renderer_Abstract
             throw new Exception;
         }
         // TODO context
-        if ($node->mode & PhpLatex_Parser::MODE_MATH) {
+        if ($node->mode & Parser::MODE_MATH) {
             if ($node->optional) {
                 // optional argument, for proper nesting must be wrapped in
                 // curly braces
@@ -127,14 +129,14 @@ class PhpLatex_Renderer_Html extends PhpLatex_Renderer_Abstract
             $html = '';
         }
 
-        $tit = new PhpLatex_Utils_PeekableArrayIterator($node->getChildren());
+        $tit = new PeekableArrayIterator($node->getChildren());
         while ($tit->valid()) {
             $subnode = $tit->current();
             $html .= $this->_renderNode($subnode, $flags);
             $tit->next();
         }
 
-        if ($node->mode & PhpLatex_Parser::MODE_MATH) {
+        if ($node->mode & Parser::MODE_MATH) {
             if ($node->optional) {
                 $html .= '}]';
             } else {
@@ -147,36 +149,19 @@ class PhpLatex_Renderer_Html extends PhpLatex_Renderer_Abstract
     protected function _renderMath($node, $flags = 0)
     {
         if ($node->inline) {
-            $delims = array('\\(', '\\)');
+            $delims = ['\\(', '\\)'];
         } else {
-            $delims = array('\\[', '\\]');
+            $delims = ['\\[', '\\]'];
         }
 
         $html = $this->_renderGroup($node, $flags);
-
-                    // check for forbidden control words
-                    /*if (in_array($token['value'], array(
-                        '\\def',
-                        '\\newcommand', '\\renewcommand',
-                        '\\newenvironment', '\\renewenvironment',
-                        '\\newfont', '\\newtheorem', '\\usepackage',
-                        // MathTex extensions
-                        '\\eval', '\\environment', '\\gif',
-                    ), true)) {
-                        break;
-                    }*/
-
-        // filter out certain commands
-        // escape unescaped \(, \), \[ and \] in subtree
-        // render contents
-        // trim
         return $delims[0] . $html . $delims[1];
     }
 
     // TODO need to know whether special is in math or text mode
     protected function _renderSpecial($node, $flags = 0)
     {
-        if ($node->mode & PhpLatex_Parser::MODE_MATH) {
+        if ($node->mode & Parser::MODE_MATH) {
             if ($node->value === '_' || $node->value === '^') {
                 $children = $node->getChildren();
                 if (count($children)) {
@@ -186,19 +171,19 @@ class PhpLatex_Renderer_Html extends PhpLatex_Renderer_Abstract
             return $node->value;
         }
         switch ($node->value) {
-                case '~':
-                    return '&nbsp;';
+            case '~':
+                return '&nbsp;';
 
-                case '_':
-                case '^':
-                    $children = $node->getChildren();
-                    if (count($children)) {
-                        $tag = $node->value === '_' ? 'sub' : 'sup';
-                        $text = $this->_renderNode($children[0], self::FLAG_ARG);
-                        return '<' . $tag . '>' . $text . '</' . $tag . '>';
-                    }
-                    break;
-            }
+            case '_':
+            case '^':
+                $children = $node->getChildren();
+                if (count($children)) {
+                    $tag = $node->value === '_' ? 'sub' : 'sup';
+                    $text = $this->_renderNode($children[0], self::FLAG_ARG);
+                    return '<' . $tag . '>' . $text . '</' . $tag . '>';
+                }
+                break;
+        }
     }
 
     protected function _renderEnvironList($node)
@@ -208,7 +193,7 @@ class PhpLatex_Renderer_Html extends PhpLatex_Renderer_Abstract
         if ($node->getChildren()) {
             // list environments do not inherit flags
             $html .= '<' . $tag . '>';
-            $iit = new PhpLatex_Utils_PeekableArrayIterator($node->getChildren());
+            $iit = new PeekableArrayIterator($node->getChildren());
             while ($iit->valid()) {
                 $subnode = $iit->current();
                 $html .= $this->_renderItem($subnode, $iit, 0);
@@ -230,12 +215,12 @@ class PhpLatex_Renderer_Html extends PhpLatex_Renderer_Abstract
         $ncols = 0;
         $row = 0;
         $col = 0;
-        $table = array();
+        $table = [];
 
         // ltrim spaces
         for ($i = 1; $i < count($children); ++$i) {
             $child = $children[$i];
-            if ($child->getType() === PhpLatex_Parser::TYPE_COMMAND &&
+            if ($child->getType() === Parser::TYPE_COMMAND &&
                 $child->value === '\\\\'
             ) {
                 // start new row
@@ -243,7 +228,7 @@ class PhpLatex_Renderer_Html extends PhpLatex_Renderer_Abstract
                 $col = 0;
                 continue;
             }
-            if ($child->getType() === PhpLatex_Parser::TYPE_SPECIAL &&
+            if ($child->getType() === Parser::TYPE_SPECIAL &&
                 $child->value === '&'
             ) {
                 // start new column
@@ -321,7 +306,7 @@ class PhpLatex_Renderer_Html extends PhpLatex_Renderer_Abstract
     protected function _renderEnvironVerbatim($node)
     {
         $child = $node->getChild(0);
-        return '<pre class="latex-verbatim">' . htmlspecialchars($child->value)  . '</pre>';
+        return '<pre class="latex-verbatim">' . htmlspecialchars($child->value) . '</pre>';
     }
 
     protected function _renderNodeChildren($node)
@@ -338,7 +323,7 @@ class PhpLatex_Renderer_Html extends PhpLatex_Renderer_Abstract
     // this node
     protected function _renderNode($node, $flags = 0)
     {
-        if ($node->getType() === PhpLatex_Parser::TYPE_ENVIRON) {
+        if ($node->getType() === Parser::TYPE_ENVIRON) {
             $html = '';
             switch ($node->value) {
                 case 'itemize':
@@ -357,13 +342,13 @@ class PhpLatex_Renderer_Html extends PhpLatex_Renderer_Abstract
             return $html;
         }
 
-        if ($node->getType() === PhpLatex_Parser::TYPE_VERBATIM) {
+        if ($node->getType() === Parser::TYPE_VERBATIM) {
             return $this->__renderText($node->value);
         }
 
-        if ($node->getType() === PhpLatex_Parser::TYPE_COMMAND) {
+        if ($node->getType() === Parser::TYPE_COMMAND) {
             // TODO filter out forbidden control sequences
-            if ($node->mode & PhpLatex_Parser::MODE_MATH) {
+            if ($node->mode & Parser::MODE_MATH) {
                 $html = $this->_renderNodeChildren($node);
                 // don't append space if control symbol
 
@@ -454,7 +439,7 @@ class PhpLatex_Renderer_Html extends PhpLatex_Renderer_Abstract
 
                         // TODO validate url, only (ht|f)tp(s)?:// urls
                         $url = $this->_renderNode($args[0]);
-                        $urlAttr = str_replace(array('<', '>', '"'), array('&lt;', '&gt;', '&quot;'), $url);
+                        $urlAttr = str_replace(['<', '>', '"'], ['&lt;', '&gt;', '&quot;'], $url);
 
                         $text = count($args) > 1 ? $this->_renderNode($args[1]) : $url;
 
@@ -533,7 +518,7 @@ class PhpLatex_Renderer_Html extends PhpLatex_Renderer_Abstract
     protected function _pushTypestyle()
     {
         if (!$this->_initialTypestyle) {
-            $this->_initialTypestyle = new PhpLatex_Renderer_Typestyle();
+            $this->_initialTypestyle = new Typestyle();
         }
         if (!$this->_typestyle) {
             $this->_typestyle = $this->_initialTypestyle->push();
@@ -543,11 +528,11 @@ class PhpLatex_Renderer_Html extends PhpLatex_Renderer_Abstract
         return $this->_typestyle;
     }
 
-    protected function _renderStyled(PhpLatex_Node $node)
+    protected function _renderStyled(Node $node)
     {
         $typestyle = null;
 
-        if ($node->getType() === PhpLatex_Parser::TYPE_COMMAND) {
+        if ($node->getType() === Parser::TYPE_COMMAND) {
             switch ($node->value) {
                 case '\\textbf':
                     $typestyle = $this->_pushTypestyle();
@@ -556,17 +541,17 @@ class PhpLatex_Renderer_Html extends PhpLatex_Renderer_Abstract
 
                 case '\\textup':
                     $typestyle = $this->_pushTypestyle();
-                    $typestyle->style = PhpLatex_Renderer_Typestyle::STYLE_NORMAL;
+                    $typestyle->style = Typestyle::STYLE_NORMAL;
                     break;
 
                 case '\\textit':
                     $typestyle = $this->_pushTypestyle();
-                    $typestyle->style = PhpLatex_Renderer_Typestyle::STYLE_ITALIC;
+                    $typestyle->style = Typestyle::STYLE_ITALIC;
                     break;
 
                 case '\\textsl': // slanted (oblique)
                     $typestyle = $this->_pushTypestyle();
-                    $typestyle->style = PhpLatex_Renderer_Typestyle::STYLE_SLANTED;
+                    $typestyle->style = Typestyle::STYLE_SLANTED;
                     break;
 
                 case '\\emph':
@@ -576,17 +561,17 @@ class PhpLatex_Renderer_Html extends PhpLatex_Renderer_Abstract
 
                 case '\\textrm':
                     $typestyle = $this->_pushTypestyle();
-                    $typestyle->family = PhpLatex_Renderer_Typestyle::FAMILY_SERIF;
+                    $typestyle->family = Typestyle::FAMILY_SERIF;
                     break;
 
                 case '\\texttt':
                     $typestyle = $this->_pushTypestyle();
-                    $typestyle->family = PhpLatex_Renderer_Typestyle::FAMILY_MONO;
+                    $typestyle->family = Typestyle::FAMILY_MONO;
                     break;
 
                 case '\\textsf':
                     $typestyle = $this->_pushTypestyle();
-                    $typestyle->family = PhpLatex_Renderer_Typestyle::FAMILY_SANS;
+                    $typestyle->family = Typestyle::FAMILY_SANS;
                     break;
 
                 case '\\underline':
@@ -618,25 +603,25 @@ class PhpLatex_Renderer_Html extends PhpLatex_Renderer_Abstract
             $this->_typestyle = $typestyle->pop();
         }
 
-        return (string) $render;
+        return (string)$render;
     }
 
     protected function _wrapStyle($render, array $diff = null)
     {
-        $tags = array();
-        $style = array();
+        $tags = [];
+        $style = [];
 
         if (isset($diff['family'])) {
             switch ($diff['family']) {
-                case PhpLatex_Renderer_Typestyle::FAMILY_SANS:
+                case Typestyle::FAMILY_SANS:
                     $style['font-family'] = 'sans-serif';
                     break;
 
-                case PhpLatex_Renderer_Typestyle::FAMILY_MONO:
+                case Typestyle::FAMILY_MONO:
                     $style['font-family'] = 'monospace';
                     break;
 
-                case PhpLatex_Renderer_Typestyle::FAMILY_SERIF:
+                case Typestyle::FAMILY_SERIF:
                     $style['font-family'] = 'serif';
                     break;
             }
@@ -644,15 +629,15 @@ class PhpLatex_Renderer_Html extends PhpLatex_Renderer_Abstract
 
         if (isset($diff['style'])) {
             switch ($diff['style']) {
-                case PhpLatex_Renderer_Typestyle::STYLE_NORMAL:
+                case Typestyle::STYLE_NORMAL:
                     $style['font-style'] = 'normal';
                     break;
 
-                case PhpLatex_Renderer_Typestyle::STYLE_SLANTED:
+                case Typestyle::STYLE_SLANTED:
                     $style['font-style'] = 'oblique';
                     break;
 
-                case PhpLatex_Renderer_Typestyle::STYLE_ITALIC:
+                case Typestyle::STYLE_ITALIC:
                     $tags[] = 'i';
                     break;
             }
@@ -701,7 +686,7 @@ class PhpLatex_Renderer_Html extends PhpLatex_Renderer_Abstract
             return $open . $render . $close;
         }
 
-        $css = array();
+        $css = [];
         foreach ($style as $key => $value) {
             $css[] = $key . ':' . $value;
         }
@@ -709,16 +694,16 @@ class PhpLatex_Renderer_Html extends PhpLatex_Renderer_Abstract
     }
 
     /**
-     * @param PhpLatex_Node|string $document
+     * @param Node|string $document
      * @return mixed|string
      */
     public function render($document)
     {
-        if (!$document instanceof PhpLatex_Node) {
+        if (!$document instanceof Node) {
             $document = $this->getParser()->parse($document);
         }
 
-        $this->_par = array();
+        $this->_par = [];
         $result = '';
 
         foreach ($document->getChildren() as $node) {

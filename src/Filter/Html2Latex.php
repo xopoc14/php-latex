@@ -1,119 +1,10 @@
 <?php
 
-// Paragraph container. Only non-empty paragraphs are stored,
-// a paragraph cannot contain LF characters,
-// line break or paragraph start must be explicitly given
-class PhpLatex_Filter_ParagraphList implements Countable, IteratorAggregate
-{
-    /**
-     * @var array
-     */
-    protected $_paragraphs = array(); // non-empty paragraphs
+namespace Xopoc14\PhpLatex\Filter;
 
-    /**
-     * @var int
-     */
-    protected $_pos = 0;
+use Xopoc14\PhpLatex\Utils;
 
-    /**
-     * @var bool
-     */
-    protected $_nl = false;
-
-    public function addText($text)
-    {
-        $text = preg_replace('/\s+/', ' ', $text);
-
-        if (strlen($text)) {
-            // echo '[' . @$this->_paragraphs[$this->_pos] . '](', $text, ') -> ';
-
-            if (isset($this->_paragraphs[$this->_pos])) {
-                if ($this->_nl) {
-                    if ($text !== ' ') {
-                        $this->_nl = false;
-                        $par = $this->_paragraphs[$this->_pos] . "\\\\\n" . $text;
-                    } else {
-                        // do nothing - do not append space-only string or line break
-                        // wait for more text to come
-                        $par = $text;
-                    }
-                } else {
-                    // append new text to existing paragraph, merge spaces on the
-                    // strings boundary into a single space
-                    $par = $this->_paragraphs[$this->_pos] . $text;
-                    $par = str_replace('  ', ' ', $par);
-                }
-            } else {
-                // new paragraph must start with a non-space character,
-                // no line break at the beginning of the paragraph, trailing
-                // spaces are allowed (there will be no more than 2)
-                $par = $text;
-            }
-
-            if (strlen($par)) {
-                $this->_paragraphs[$this->_pos] = $par;
-            }
-
-            // echo '[' . @$this->_paragraphs[$this->_pos] . ']', "\n\n";
-        }
-
-
-        return $this;
-    }
-
-    public function breakLine()
-    {
-        if ($this->_nl) {
-            $this->newParagraph();
-        } elseif (isset($this->_paragraphs[$this->_pos]) && !ctype_space($this->_paragraphs[$this->_pos])) {
-            // line break can only be placed in a non-empty paragraph
-            $this->_nl = true;
-        }
-        return $this;
-    }
-
-    public function newParagraph()
-    {
-        $this->_nl = false;
-        if (isset($this->_paragraphs[$this->_pos])) {
-            ++$this->_pos;
-        }
-        return $this;
-    }
-
-    public function clear()
-    {
-        $this->_paragraphs = array();
-        $this->_pos = 0;
-        $this->_nl = false;
-        return $this;
-    }
-
-    public function count()
-    {
-        return count($this->_paragraphs);
-    }
-
-    public function getIterator()
-    {
-        return new ArrayIterator($this->_paragraphs);
-    }
-
-    public function __toString()
-    {
-        if (count($this->_paragraphs)) {
-            return preg_replace('/[ ]+/', ' ', implode("\n\n", $this->_paragraphs)) . "\n\n";
-        }
-        return '';
-    }
-
-    public function toArray()
-    {
-        return $this->_paragraphs;
-    }
-}
-
-class PhpLatex_Filter_Html2Latex
+class Html2Latex
 {
     protected static $_outputEncoding = 'ANSI';
 
@@ -158,8 +49,8 @@ class PhpLatex_Filter_Html2Latex
         }
 
         if ($body) {
-            $elems = array($body);
-            $refs = array();
+            $elems = [$body];
+            $refs = [];
             $filter = new Zefram_Filter_Slug(); // FIXME dependency!
             // extract all referenced ids of elements, they will be used for internal links creation
             while ($elem = array_shift($elems)) {
@@ -196,7 +87,7 @@ class PhpLatex_Filter_Html2Latex
     public static function processBlock(DOMNode $body, $flags = 0)
     {
         $latex = '';
-        $par = new PhpLatex_Filter_ParagraphList();
+        $par = new ParagraphList();
         foreach ($body->childNodes as $item) {
             switch ($item->nodeType) {
                 case XML_TEXT_NODE:
@@ -214,14 +105,14 @@ class PhpLatex_Filter_Html2Latex
                         case 'H6':
                             $value = trim(self::getText($item));
                             if (!($flags & self::NO_HEADINGS)) {
-                                $map = array(
+                                $map = [
                                     'H1' => 'section',
                                     'H2' => 'section',
                                     'H3' => 'subsection',
                                     'H4' => 'subsubsection',
                                     'H5' => 'paragraph',
                                     'H6' => 'subparagraph',
-                                );
+                                ];
 
                                 // TODO handle math mode \texorpdfstring
 
@@ -229,7 +120,7 @@ class PhpLatex_Filter_Html2Latex
 
                                 // find first id, if found, create label,
                                 // analyze elements in document order
-                                $elems = array($item);
+                                $elems = [$item];
                                 while ($elem = array_shift($elems)) {
                                     if ($elem->nodeType === XML_ELEMENT_NODE) {
                                         $id = str_ireplace('ref:', '', $elem->getAttribute('id'));
@@ -292,7 +183,7 @@ class PhpLatex_Filter_Html2Latex
     public static function processTable(DOMElement $table, $flags = 0)
     {
         // requires tabularx package
-        $tbodies = array($table);
+        $tbodies = [$table];
         foreach (self::getChildren($table, 'TBODY') as $tbody) {
             $tbodies[] = $tbody;
         }
@@ -302,7 +193,7 @@ class PhpLatex_Filter_Html2Latex
             foreach (self::getChildren($tbody, 'TR') as $tr) {
                 $tds = self::getChildren($tr, 'TD');
                 $ncols = max($ncols, count($tds));
-                $row = array();
+                $row = [];
                 foreach ($tds as $td) {
                     $row[] = self::getText($td);
                 }
@@ -334,7 +225,7 @@ class PhpLatex_Filter_Html2Latex
 
     public static function getChildren(DOMNode $node, $tagName)
     {
-        $children = array();
+        $children = [];
         if ($node->nodeType === XML_ELEMENT_NODE) {
             foreach ($node->childNodes as $child) {
                 if ($child->nodeType === XML_ELEMENT_NODE && strtoupper($child->tagName) === $tagName) {
@@ -350,7 +241,7 @@ class PhpLatex_Filter_Html2Latex
         // TODO handle indented lists
 
         $tagName = strtoupper($element->tagName);
-        if (!in_array($tagName, array('OL', 'UL', 'DL'))) {
+        if (!in_array($tagName, ['OL', 'UL', 'DL'])) {
             throw new InvalidArgumentException('Not a list: ' . $tagName);
         }
 
@@ -420,7 +311,7 @@ class PhpLatex_Filter_Html2Latex
         if (strlen($text)) {
             $href = trim($element->getAttribute('href'));
             if (strlen($href)) {
-                $label = PhpLatex_Utils::escape($text);
+                $label = Utils::escape($text);
                 if ($href{0} === '#') {
                     $id = substr($href, 1);
                     if (isset(self::$_refs[$id])) {
@@ -428,12 +319,12 @@ class PhpLatex_Filter_Html2Latex
                     }
                     return;
                 }
-                return '\\href{' . PhpLatex_Utils::escape($href) . '}{' . $label . '}';
+                return '\\href{' . Utils::escape($href) . '}{' . $label . '}';
             }
         }
     }
 
-    protected static function _addToParagraph(PhpLatex_Filter_ParagraphList $par, DOMNode $item, $flags = 0)
+    protected static function _addToParagraph(ParagraphList $par, DOMNode $item, $flags = 0)
     {
         $cflags = $flags;
         switch ($item->nodeType) {
@@ -518,7 +409,7 @@ class PhpLatex_Filter_Html2Latex
 
     public static function getText(DOMNode $element, $flags = 0)
     {
-        $par = new PhpLatex_Filter_ParagraphList();
+        $par = new ParagraphList();
 
         foreach ($element->childNodes as $item) {
             switch ($item->nodeType) {
@@ -538,12 +429,12 @@ class PhpLatex_Filter_Html2Latex
 
     public static function getTextValue(DOMText $node)
     {
-        $value = str_replace(array("\r\n", "\r"), "\n", $node->wholeText);
-        $value = PhpLatex_Utils::escape($value);
+        $value = str_replace(["\r\n", "\r"], "\n", $node->wholeText);
+        $value = Utils::escape($value);
 
         // replace UTF-8 characters with their counterparts if encoding is not UTF-8,
         // otherwise remove invalid UTF-8 characters
-        if (in_array(self::$_outputEncoding, array('UTF-8', 'UTF8'), true)) {
+        if (in_array(self::$_outputEncoding, ['UTF-8', 'UTF8'], true)) {
             // regex taken from http://stackoverflow.com/questions/1401317/remove-non-utf8-characters-from-string
             $regex = '
             /
@@ -558,7 +449,7 @@ class PhpLatex_Filter_Html2Latex
             /x';
             $value = preg_replace($regex, '$1', $value);
         } else {
-            $value = PhpLatex_Utils::escapeUtf8($value);
+            $value = Utils::escapeUtf8($value);
         }
         return $value;
     }

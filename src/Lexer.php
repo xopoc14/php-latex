@@ -1,18 +1,20 @@
 <?php
 
-class PhpLatex_Lexer
+namespace Xopoc14\PhpLatex;
+
+class Lexer
 {
     const STATE_DEFAULT = 0;
-    const STATE_BSLASH  = 1;
+    const STATE_BSLASH = 1;
     const STATE_CONTROL = 2;
-    const STATE_SPACE   = 3;
+    const STATE_SPACE = 3;
 
-    const TYPE_TEXT     = 'text';
-    const TYPE_SPACE    = 'space';
-    const TYPE_CWORD    = 'cword';
-    const TYPE_CSYMBOL  = 'csymbol';
-    const TYPE_SPECIAL  = 'special';
-    const TYPE_COMMENT  = 'comment';
+    const TYPE_TEXT = 'text';
+    const TYPE_SPACE = 'space';
+    const TYPE_CWORD = 'cword';
+    const TYPE_CSYMBOL = 'csymbol';
+    const TYPE_SPECIAL = 'special';
+    const TYPE_COMMENT = 'comment';
 
     protected $_str;
     protected $_pos;
@@ -36,9 +38,9 @@ class PhpLatex_Lexer
 
         // Unify newline character across platforms, replace tab with space
         $str = str_replace(
-            array("\r\n", "\r", "\t"),
-            array("\n", "\n", " "),
-            (string) $str
+            ["\r\n", "\r", "\t"],
+            ["\n", "\n", " "],
+            (string)$str
         );
 
         // Replace ASCII control characters with spaces, so that token positions
@@ -232,8 +234,8 @@ class PhpLatex_Lexer
                 case '{':
                 case '[': // square brackets are considered special symbols, as
                 case ']': // they delimit optional arguments
-                // case '(': no reason why ordinary brackets should be
-                // case ')': considered a special symbol
+                    // case '(': no reason why ordinary brackets should be
+                    // case ')': considered a special symbol
                 case '~':
                 case '^':
                 case '_':
@@ -313,10 +315,10 @@ class PhpLatex_Lexer
     protected function _setToken($type, $value)
     {
         // printf("setToken(type = %s, value = %s, pos = %d)\n", $type, $value, $this->_pos);
-        return $this->_token = array(
+        return $this->_token = [
             'type' => $type,
             'value' => $value,
-        );
+        ];
     }
 
     /**
@@ -332,7 +334,7 @@ class PhpLatex_Lexer
      *
      * \par is equivalent to: #[ \t]*\n[ \t]*\n[ \t\n]*#
      *
-     * @param  string $value
+     * @param string $value
      * @return array
      */
     protected function _setSpaceToken($value)
@@ -350,7 +352,7 @@ class PhpLatex_Lexer
      * Locale independent check if string is non-empty and consists of
      * ASCII letters A-Za-z only.
      *
-     * @param  string $str
+     * @param string $str
      * @return bool
      */
     protected function _isAlpha($str)

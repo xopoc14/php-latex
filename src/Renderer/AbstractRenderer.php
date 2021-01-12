@@ -1,6 +1,10 @@
 <?php
 
-abstract class PhpLatex_Renderer_Abstract
+namespace Xopoc14\PhpLatex\Renderer;
+
+use Xopoc14\PhpLatex\Node;
+
+abstract class AbstractRenderer
 {
     /**
      * Creates LaTeX representation of the given document node.
@@ -9,34 +13,34 @@ abstract class PhpLatex_Renderer_Abstract
      * presented as the LaTeX source for processing (validating and rendering)
      * by external tools, i.e. MathJaX, mathTeX or mimeTeX.
      *
-     * @param PhpLatex_Node|PhpLatex_Node[] $node
+     * @param Node|Node[] $node
      * @return string
      */
     public static function toLatex($node) // {{{
     {
-        if ($node instanceof PhpLatex_Node) {
+        if ($node instanceof Node) {
             switch ($node->getType()) {
-                case PhpLatex_Parser::TYPE_SPECIAL:
+                case Parser::TYPE_SPECIAL:
                     if ($node->value === '_' || $node->value === '^') {
                         return $node->value . self::toLatex($node->getChildren());
                     }
                     return $node->value;
 
-                case PhpLatex_Parser::TYPE_TEXT:
+                case Parser::TYPE_TEXT:
                     // make sure text is properly escaped
-                    $source = PhpLatex_Utils::escape($node->value);
+                    $source = Utils::escape($node->value);
                     return $source;
 
-                case PhpLatex_Parser::TYPE_GROUP:
+                case Parser::TYPE_GROUP:
                     $source = $node->optional ? '[{' : '{';
                     $source .= self::toLatex($node->getChildren());
                     $source .= $node->optional ? '}]' : '}';
                     return $source;
 
-                case PhpLatex_Parser::TYPE_VERBATIM:
+                case Parser::TYPE_VERBATIM:
                     return $node->value;
 
-                case PhpLatex_Parser::TYPE_MATH:
+                case Parser::TYPE_MATH:
                     $source = self::toLatex($node->getChildren());
                     if ($node->inline) {
                         return '\\(' . $source . '\\)';
@@ -44,7 +48,7 @@ abstract class PhpLatex_Renderer_Abstract
                         return '\\[' . $source . '\\]';
                     }
 
-                case PhpLatex_Parser::TYPE_COMMAND:
+                case Parser::TYPE_COMMAND:
                     $value = $node->value;
                     if ($node->starred) {
                         $value .= '*';
@@ -61,12 +65,12 @@ abstract class PhpLatex_Renderer_Abstract
                     // control word, add space that was removed after
                     return $value . ' ';
 
-                case PhpLatex_Parser::TYPE_ENVIRON:
+                case Parser::TYPE_ENVIRON:
                     return "\\begin{" . $node->value . "}\n"
                          . self::toLatex($node->getChildren())
                          . "\\end{" . $node->value . "}\n";
 
-                case PhpLatex_Parser::TYPE_DOCUMENT:
+                case Parser::TYPE_DOCUMENT:
                     return self::toLatex($node->getChildren());
             }
         } elseif (is_array($node)) {
@@ -77,21 +81,21 @@ abstract class PhpLatex_Renderer_Abstract
             }
             return $latex;
         }
-    } // }}}
+    }
 
     /**
-     * @param PhpLatex_Node|string $node
+     * @param Node|string $node
      * @return string
      */
     abstract public function render($node);
 
-    protected $_commandRenderers = array();
+    protected $_commandRenderers = [];
 
     public function addCommandRenderer($command, $renderer)
     {
-        if (!is_callable($renderer) && !$renderer instanceof PhpLatex_Renderer_NodeRenderer) {
+        if (!is_callable($renderer) && !$renderer instanceof NodeRenderer) {
             throw new InvalidArgumentException(sprintf(
-                'Renderer must be an instance of PhpLatex_Renderer_NodeRenderer or a callable, %s given',
+                'Renderer must be an instance of NodeRenderer or a callable, %s given',
                 is_object($renderer) ? get_class($renderer) : gettype($renderer)
             ));
         }
@@ -104,15 +108,16 @@ abstract class PhpLatex_Renderer_Abstract
         return isset($this->_commandRenderers[$command]);
     }
 
-    public function executeCommandRenderer($command, PhpLatex_Node $node)
+    public function executeCommandRenderer($command, Node $node)
     {
         if (!$this->hasCommandRenderer($command)) {
             throw new InvalidArgumentException('Renderer for command ' . $command . ' not available');
         }
         $renderer = $this->_commandRenderers[$command];
-        if ($renderer instanceof PhpLatex_Renderer_NodeRenderer) {
+        if ($renderer instanceof NodeRenderer) {
             return $renderer->render($node);
         }
         return call_user_func($renderer, $node);
     }
+
 }

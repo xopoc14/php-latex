@@ -1,16 +1,22 @@
 <?php
 
-class PhpLatex_Test_ParserTest extends PHPUnit_Framework_TestCase
+namespace Xopoc14\PhpLatex\Test;
+
+use PHPUnit\Framework\TestCase;
+use Xopoc14\PhpLatex\Parser;
+use Xopoc14\PhpLatex\Renderer\AbstractRenderer;
+
+class ParserTest extends TestCase
 {
     /**
-     * @var PhpLatex_Parser
+     * @var Parser
      */
     protected $parser;
 
     protected function setUp()
     {
         parent::setUp();
-        $this->parser = new PhpLatex_Parser();
+        $this->parser = new Parser();
     }
 
     /**
@@ -21,44 +27,44 @@ class PhpLatex_Test_ParserTest extends PHPUnit_Framework_TestCase
     public function testNewlines($input, $expected)
     {
         $tree = $this->parser->parse($input);
-        $this->assertSame($expected, PhpLatex_Renderer_Abstract::toLatex($tree));
+        $this->assertSame($expected, AbstractRenderer::toLatex($tree));
     }
 
     public function provideNewlines()
     {
-        return array(
-            array(
+        return [
+            [
                 "A\n \nB",
                 'A\par B',
-            ),
-            array(
+            ],
+            [
                 "A\n { }\nB",
                 'A { } B',
-            ),
-            array(
+            ],
+            [
                 "A\nB",
                 'A B',
-            ),
-            array(
+            ],
+            [
                 "A\n % comment\nB",
                 'A B',
-            ),
-            "LaTeX Error: There's no line here to end." => array(
+            ],
+            "LaTeX Error: There's no line here to end." => [
                 "A\n \n\\newline B",
                 'A\par \newline B',
-            ),
-        );
+            ],
+        ];
     }
 
     public function testStarred()
     {
         $tree = $this->parser->parse('\\* \\section*{Foo} \\LaTeX*');
-        $this->assertSame('\\* \\section*{Foo} \\LaTeX *', PhpLatex_Renderer_Abstract::toLatex($tree));
+        $this->assertSame('\\* \\section*{Foo} \\LaTeX *', AbstractRenderer::toLatex($tree));
     }
 
     public function testSpaces()
     {
         $tree = $this->parser->parse('\\ \\, \\: \\;');
-        $this->assertSame('\\ \\, \(\\:\) \(\\;\)', PhpLatex_Renderer_Abstract::toLatex($tree));
+        $this->assertSame('\\ \\, \(\\:\) \(\\;\)', AbstractRenderer::toLatex($tree));
     }
 }
